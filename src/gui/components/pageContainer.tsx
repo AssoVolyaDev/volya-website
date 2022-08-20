@@ -36,6 +36,9 @@ export const ContentPageContainer = styled.div<{ coloredBackground?: boolean | s
     if (coloredBackground === true) {
       return theme.backgroundColor
     }
+    if (coloredBackground === "other") {
+      return theme.otherBackgroundColor
+    }
     return coloredBackground
   }};
   padding: 10px;

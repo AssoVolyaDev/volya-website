@@ -1,16 +1,20 @@
 import React, { Suspense, useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ThemeProvider } from 'styled-components'
-import 'bootstrap/dist/css/bootstrap.min.css';
+import './style/bootstrap.scss';
 
 import Footer from './gui/components/footer'
 import Navbar from './gui/components/navbar'
 import Loading from './gui/components/Loading'
-import Contact from './gui/screens/Contact';
+
 import Home from './gui/screens/Home';
+import Association from './gui/screens/Association';
+import Projects from './gui/screens/Projects';
+import Contact from './gui/screens/Contact';
+import Blog from './gui/screens/Blog';
+
 import LegalNotices from './gui/screens/LegalNotices';
 import CGU from './gui/screens/CGU';
-import FAQ from './gui/screens/FAQ';
 import { GlobalStyles } from './style/global'
 import { theme } from './style/theme'
 
@@ -33,12 +37,15 @@ function App() {
 
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/association" element={<Association />} />
+                <Route path="/projets" element={<Projects />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/blog" element={<Blog />} />
+
                 <Route path="/mentions-legales" element={<LegalNotices />} />
                 <Route path="/cgu" element={<CGU />} />
                 {/* TODO obligatoire <Route path="/confidentialite" element={<PrivacyPolicy />} /> */}
                 {/* TODO obligatoire (redirection à partir de PrivacyPolicy) <Route path="/cookies" element={<Cookies />} /> */}
-                <Route path="/faq" element={<FAQ />} />
-                <Route path="/contact" element={<Contact />} />
               </Routes>
               <Footer />
             </BrowserRouter>

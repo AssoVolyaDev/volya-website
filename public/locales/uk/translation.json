@@ -1,3 +1,44 @@
 {
-  "mainTitle": "Aсоціація воля"
+  "menu": {
+    "home": "Home",
+    "association": "Association",
+    "projects": "Projects",
+    "contact": "Contact",
+    "blog": "Blog",
+    "search": {
+      "placeholder": "Recherche"
+    },
+    "locale": {
+      "fr": "Français",
+      "en": "Anglais",
+      "uk": "Yкраїнська"
+    }
+  },
+  "home": {
+    "title": "Aсоціація воля",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "details": "Détails",
+    "collectionSite": {
+      "title": "Point de collecte",
+      "hours": "Horaires",
+      "address": "Adresse"
+    },
+    "actualites": {
+      "title": "Actualités"
+    },
+    "blog": {
+      "title": "Derniers articles de blog"
+    },
+    "calendar": {
+      "title": "Calendrier Volya"
+    }
+  },
+  "footer": {
+    "iNeedHelp": "I need help",
+    "iWantToHelp": "I want to help",
+    "contact": "Contact",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address"
+  }
 }

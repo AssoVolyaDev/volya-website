@@ -2,6 +2,7 @@ import * as Constants from '../constants';
 
 export interface Theme {
   backgroundColor: string,
+  otherBackgroundColor: string,
   deviceSizes: {
     mobileXS: string
     mobile: string
@@ -13,7 +14,8 @@ export interface Theme {
 }
 
 export const theme: Theme = {
-  backgroundColor: 'grey',
+  backgroundColor: '#0090c3',
+  otherBackgroundColor: '#F0C611',
   deviceSizes: {
     mobileXS: Constants.DEVICE_SIZES.mobileXS + 'px',
     mobile: Constants.DEVICE_SIZES.mobile + 'px',

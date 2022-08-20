@@ -1,93 +1,18 @@
-import React, { useState, useRef, useContext } from 'react'
-import styled from 'styled-components'
-import { useMediaQuery } from 'react-responsive'
-import { Link } from 'react-router-dom';
-import Button from 'react-bootstrap/Button';
+import React, { useContext } from 'react'
+import { useTranslation } from 'react-i18next'
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { DEVICE_SIZES } from '../../constants';
-import Brand from './brand'
-import Marginer from './marginer'
-import Burger from './burger'
-import Menu from './menu'
 import LogoImg from '../../assets/images/logo.png'
 import LocaleContext from '../../LocaleContext';
 import i18n from '../../i18n';
 
-const NavbarContainer = styled.div`
-  width: 100%;
-  height: 65px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1.5rem;
-
-  border-bottom: 0.6px solid rgb(0, 0, 0, 0.3);
-`
-
-const BrandLogoLink = styled(Link)`
-  display: flex;
-  flex-direction: row;
-`
-
-const LogoImage = styled.div`
-  img {
-    width: 40px;
-    height: 40px;
-  }
-`
-
-const AccessibilityContainer = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`
-
-const MenuLink = styled(Link)`
-  display: flex;
-  flex-direction: columns;
-  color: #000;
-  font-size: 1.8rem;
-
-  &:hover {
-    color: ${({ theme }) => theme.linkHoverColor};
-  }
-
-  @media (max-width: ${({ theme }) => theme.deviceSizes.desktop}) {
-    font-size: 1.5rem;
-  }
-
-  @media (max-width: ${({ theme }) => theme.deviceSizes.laptop}) {
-    font-size: 1.2rem;
-  }
-
-  @media (max-width: ${({ theme }) => theme.deviceSizes.tablet}) {
-    font-size: 1rem;
-  }
-`
-const Navbar = () => {
-  const burgerRef = useRef(null)
-
-  const [open, setOpen] = useState(false)
-
-  const isMobileXS = useMediaQuery({ maxWidth: DEVICE_SIZES.mobileXS })
-  const isMobile = useMediaQuery({ maxWidth: DEVICE_SIZES.mobileXL })
-  const tablet = useMediaQuery({ maxWidth: DEVICE_SIZES.tablet })
-  const laptop = useMediaQuery({ maxWidth: DEVICE_SIZES.laptop })
-
-  let brandFontSize: number
-  if (isMobileXS) {
-    brandFontSize = 1.25
-  } else if (isMobile) {
-    brandFontSize = 1.5
-  } else if (tablet) {
-    brandFontSize = 1.5
-  } else if (laptop) {
-    brandFontSize = 1.8
-  } else {
-    brandFontSize = 2
-  }
+const VolyaNavbar = () => {
+  const { t } = useTranslation();
 
   const { locale } = useContext(LocaleContext);
 
@@ -97,38 +22,45 @@ const Navbar = () => {
     }
   }
 
+
   return (
-    <NavbarContainer>
-      <AccessibilityContainer>
-        <BrandLogoLink to="/">
-          <LogoImage>
-            <img src={LogoImg} alt="Volya logo" />
-          </LogoImage>
-          <Brand size={brandFontSize} />
-        </BrandLogoLink>
-        {
-          isMobile ? (
-            <>
-              <Burger burgerRef={burgerRef} open={open} setOpen={setOpen} />
-              <Menu burgerRef={burgerRef} open={open} setOpen={setOpen} />
-            </>
-          ) : (
-            <>
-              <div>
-                <Button variant="outline-dark" onClick={() => changeLocale('fr')}>fr</Button>
-                <Button variant="outline-dark" onClick={() => changeLocale('uk')}>ua</Button>
-                <Button variant="outline-dark" onClick={() => changeLocale('en')}>eng</Button>
-              </div>
-              <div>
-                <Marginer direction="horizontal" margin={100} />
-                <MenuLink to="/faq">FAQ</MenuLink>
-                <Marginer direction="horizontal" margin={100} />
-              </div>
-            </>
-          )}
-      </AccessibilityContainer>
-    </NavbarContainer>
-  )
+    <Navbar sticky="top" expand="lg" style={{ backgroundColor: 'white' }}>
+      <Container>
+        <Navbar.Brand href="/">
+          <img src={LogoImg}
+            width="100"
+            height="100"
+            className="d-inline-block align-top"
+            alt="Volya logo"
+          />
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="justify-content-end flex-grow-1 pe-3">
+            <Form className="d-flex">
+              <Form.Control
+                type="search"
+                // TODO Ajouter une loupe
+                placeholder={t("menu.search.placeholder")}
+                className="me-2"
+                aria-label="Search"
+              />
+            </Form>
+            <Nav.Link href="/">{t("menu.home")}</Nav.Link>
+            <Nav.Link href="/association">{t("menu.association")}</Nav.Link>
+            <Nav.Link href="/projets">{t("menu.projects")}</Nav.Link>
+            <Nav.Link href="/contact">{t("menu.contact")}</Nav.Link>
+            <Nav.Link href="/blog">{t("menu.blog")}</Nav.Link>
+            <NavDropdown title={t(`menu.locale.${locale}`)} id="navbarScrollingDropdown">
+              <NavDropdown.Item onClick={() => changeLocale('fr')}>Français</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => changeLocale('uk')}>Yкраїнська</NavDropdown.Item>
+              <NavDropdown.Item onClick={() => changeLocale('en')}>English</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 }
 
-export default Navbar
+export default VolyaNavbar
