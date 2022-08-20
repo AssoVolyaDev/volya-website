@@ -1,7 +1,8 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useContext } from 'react'
 import styled from 'styled-components'
 import { useMediaQuery } from 'react-responsive'
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import Button from 'react-bootstrap/Button';
 
 import { DEVICE_SIZES } from '../../constants';
 import Brand from './brand'
@@ -9,6 +10,8 @@ import Marginer from './marginer'
 import Burger from './burger'
 import Menu from './menu'
 import LogoImg from '../../assets/images/logo.png'
+import LocaleContext from '../../LocaleContext';
+import i18n from '../../i18n';
 
 const NavbarContainer = styled.div`
   width: 100%;
@@ -86,6 +89,14 @@ const Navbar = () => {
     brandFontSize = 2
   }
 
+  const { locale } = useContext(LocaleContext);
+
+  function changeLocale(l: string) {
+    if (locale !== l) {
+      i18n.changeLanguage(l);
+    }
+  }
+
   return (
     <NavbarContainer>
       <AccessibilityContainer>
@@ -103,9 +114,16 @@ const Navbar = () => {
             </>
           ) : (
             <>
-              <Marginer direction="horizontal" margin={100} />
-              <MenuLink to="/faq">FAQ</MenuLink>
-              <Marginer direction="horizontal" margin={100} />
+              <div>
+                <Button variant="outline-dark" onClick={() => changeLocale('fr')}>fr</Button>
+                <Button variant="outline-dark" onClick={() => changeLocale('uk')}>ua</Button>
+                <Button variant="outline-dark" onClick={() => changeLocale('en')}>eng</Button>
+              </div>
+              <div>
+                <Marginer direction="horizontal" margin={100} />
+                <MenuLink to="/faq">FAQ</MenuLink>
+                <Marginer direction="horizontal" margin={100} />
+              </div>
             </>
           )}
       </AccessibilityContainer>

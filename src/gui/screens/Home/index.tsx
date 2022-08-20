@@ -1,4 +1,5 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
 import { ContentContainer } from '../../components/common'
@@ -14,13 +15,15 @@ const ContactContentContainer = styled(ContentContainer)`
   }
 `
 
-const Contact = () => {
+const Home = () => {
+  const { t } = useTranslation();
+
   return (
     <PageContainer>
       <InnerPageContainer>
         <ContentPageContainer>
           <ContactContentContainer>
-            <h2>TODO Image de fond + logo ?</h2>
+            <h2>{t("mainTitle")}</h2>
           </ContactContentContainer>
           <Marginer direction="vertical" margin="2em" />
         </ContentPageContainer>
@@ -35,4 +38,4 @@ const Contact = () => {
   )
 }
 
-export default Contact
+export default Home
