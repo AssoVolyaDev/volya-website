@@ -104,19 +104,11 @@ const SocialIcon = styled.div`
   &:hover {
     color: ${GREY_HOVER_COLOR};
   }
-
-  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileXL}) {
-    font-size: 25px;
-  }
 `
 
 const BottomStyledLink = styled(StyledLink)`
   color: ${GREY_COLOR};
   font-size: 1.25rem;
-
-  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileXL}) {
-    font-size: 0.75rem;
-  }
 
   &:hover {
     color: ${GREY_HOVER_COLOR};

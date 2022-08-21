@@ -2,10 +2,13 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next'
 import Button from 'react-bootstrap/Button';
+import GoogleMapReact from 'google-map-react';
 
+import * as Constants from '../../../constants'
 import { ContentContainer } from '../../components/common'
 import { ContentPageContainer, InnerPageContainer, PageContainer } from '../../components/pageContainer'
 import CollectionSiteImg from '../../../assets/images/collectionSite.png'
+import MapMarker from '../../components/Marker';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -22,7 +25,7 @@ const Home = () => {
             </p>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               {/* TODO color: 'white' à mettre dans bootstrap.scss d'une manière ou d'une autre */}
-              <Button variant="primary" style={{ color: 'white' }} onClick={() => navigate("../association")}>{t("home.details")}</Button>
+              <Button size="lg" variant="primary" style={{ color: 'white' }} onClick={() => navigate("../association")}>{t("home.details")}</Button>
             </div>
           </ContentContainer>
         </ContentPageContainer>
@@ -42,6 +45,17 @@ const Home = () => {
               </div>
               <div style={{ flex: 1 }}>
                 <h3>{t("home.collectionSite.address")}</h3>
+                <GoogleMapReact
+                  bootstrapURLKeys={{ key: Constants.GOOGLE_MAPS_API_KEY }}
+                  defaultCenter={Constants.GOOGLE_MAP_DEFAULT_PROPS.center}
+                  defaultZoom={Constants.GOOGLE_MAP_DEFAULT_PROPS.zoom}
+                  yesIWantToUseGoogleMapApiInternals
+                >
+                  <MapMarker
+                    lat={Constants.COLLECTION_SITE_COORDINATES.lat}
+                    lng={Constants.COLLECTION_SITE_COORDINATES.lng}
+                  />
+                </GoogleMapReact>
               </div>
             </div>
           </ContentContainer>
