@@ -7,10 +7,6 @@ export const DEVICE_SIZES = {
   desktop: 2024,
 }
 
-export const PHONE = "07xxxxxxxx";
-export const EMAIL = "volya.todo@todo.fr";
-export const ADDRESS = "3 rue du TODO 44000 NANTES";
-
 export const SOCIAL_NETWORKS_URLS = {
   facebook: 'facebook.todo',
   instagram: 'instagram.todo',

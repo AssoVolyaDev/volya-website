@@ -126,9 +126,9 @@ const Footer = () => {
             <TopSubContainer>
               <Title>{t("footer.iNeedHelp")} | {t("footer.iWantToHelp")}</Title>
               <h2>{t("footer.contact")}</h2>
-              <p>{t("footer.phone")} : {Constants.PHONE}</p>
-              <p>{t("footer.email")} : {Constants.EMAIL}</p>
-              <p>{t("footer.address")} : {Constants.ADDRESS}</p>
+              <p>{t("footer.phone")} : {t("global.contact.phone")}</p>
+              <p>{t("footer.email")} : {t("global.contact.email")}</p>
+              <p>{t("footer.address")} : {t("global.contact.address")}</p>
             </TopSubContainer>
             <TopSubContainer style={{ alignItems: 'flex-end' }}>
               <SocialIconContainer>
@@ -137,7 +137,7 @@ const Footer = () => {
                     <SocialIcon>
                       <FontAwesomeIcon icon={faInstagram} />
                     </SocialIcon>
-                    <span className="sr-only">Instagram</span>
+                    <span className="sr-only">{t("footer.socialNetworks.instagram")}</span>
                   </a>
                   <span>{Constants.SOCIAL_NETWORKS_URLS.instagram}</span>
                 </span>
@@ -147,7 +147,7 @@ const Footer = () => {
                     <SocialIcon>
                       <FontAwesomeIcon icon={faFacebook} />
                     </SocialIcon>
-                    <span className="sr-only">Facebook</span>
+                    <span className="sr-only">{t("footer.socialNetworks.facebook")}</span>
                   </a>
                   <span>{Constants.SOCIAL_NETWORKS_URLS.facebook}</span>
                 </span>
@@ -157,7 +157,7 @@ const Footer = () => {
                     <SocialIcon>
                       <FontAwesomeIcon icon={faYoutube} />
                     </SocialIcon>
-                    <span className="sr-only">Youtube</span>
+                    <span className="sr-only">{t("footer.socialNetworks.youtube")}</span>
                   </a>
                   <span>{Constants.SOCIAL_NETWORKS_URLS.youtube}</span>
                 </span>
@@ -167,7 +167,7 @@ const Footer = () => {
                     <SocialIcon>
                       <FontAwesomeIcon icon={faLinkedinIn} />
                     </SocialIcon>
-                    <span className="sr-only">Linkedin</span>
+                    <span className="sr-only">{t("footer.socialNetworks.linkedin")}</span>
                   </a>
                   <span>{Constants.SOCIAL_NETWORKS_URLS.linkedin}</span>
                 </span>
@@ -177,7 +177,7 @@ const Footer = () => {
                     <SocialIcon>
                       <FontAwesomeIcon icon={faTiktok} />
                     </SocialIcon>
-                    <span className="sr-only">Tiktok</span>
+                    <span className="sr-only">{t("footer.socialNetworks.tiktok")}</span>
                   </a>
                   <span>{Constants.SOCIAL_NETWORKS_URLS.tiktok}</span>
                 </span>
@@ -188,9 +188,9 @@ const Footer = () => {
       </TopContainer>
 
       <BottomContainer>
-        <BottomStyledLink to="/cgu">CGU</BottomStyledLink>
+        <BottomStyledLink to="/cgu">{t("footer.gcu")}</BottomStyledLink>
         <Marginer direction="horizontal" margin={15} />
-        <BottomStyledLink to="/mentions-legales">Mentions légales</BottomStyledLink>
+        <BottomStyledLink to="/mentions-legales">{t("footer.legalNotices")}</BottomStyledLink>
       </BottomContainer>
     </FooterContainer>
   )

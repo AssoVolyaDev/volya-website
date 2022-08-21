@@ -36,6 +36,7 @@ const Home = () => {
             <div style={{ display: "flex", flexDirection: 'row', paddingTop: 15 }}>
               <div style={{ flex: 1 }}>
                 <h3>{t("home.collectionSite.hours")}</h3>
+                <div>{t("global.collectionSite.hours")}</div>
                 <img src={CollectionSiteImg}
                   width="320"
                   height="240"
@@ -45,6 +46,7 @@ const Home = () => {
               </div>
               <div style={{ flex: 1 }}>
                 <h3>{t("home.collectionSite.address")}</h3>
+                <div>{t("global.collectionSite.address")}</div>
                 <GoogleMapReact
                   bootstrapURLKeys={{ key: Constants.GOOGLE_MAPS_API_KEY }}
                   defaultCenter={Constants.GOOGLE_MAP_DEFAULT_PROPS.center}

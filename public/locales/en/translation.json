@@ -1,4 +1,15 @@
 {
+  "global": {
+    "contact": {
+      "phone": "07xxxxtodo",
+      "email": "volya.todo@todo.fr",
+      "address": "3 rue du TODO 44000 NANTES"
+    },
+    "collectionSite": {
+      "hours": "Tous les jours du TODO au TODO",
+      "address": "18 rue du TODO 44000 NANTES"
+    }
+  },
   "menu": {
     "home": "Home",
     "association": "Association",
@@ -39,6 +50,15 @@
     "contact": "Contact",
     "phone": "Phone",
     "email": "Email",
-    "address": "Address"
+    "address": "Address",
+    "socialNetworks": {
+      "instagram": "Instagram",
+      "facebook": "Facebook",
+      "youtube": "Youtube",
+      "linkedin": "Linkedin",
+      "tiktok": "Tiktok"
+    },
+    "gcu": "CGU",
+    "legalNotices": "Mentions Légales"
   }
 }
