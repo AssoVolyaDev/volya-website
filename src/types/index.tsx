@@ -1,6 +1,5 @@
-export type TypeExample = 'a' | 'b';
-
-export interface InterfaceExample {
-  a: string;
-  b: number;
+export interface TeamMember {
+  // Correspond à une entrée de global.members.<id>
+  id: string;
+  picture: string;
 }

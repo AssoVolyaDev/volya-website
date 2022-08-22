@@ -1,5 +1,43 @@
 {
   "global": {
+    "members": {
+      "nataliya": {
+        "name": "Nataliya BATARINA",
+        "description": "Lorem ipsum dolor sit amet"
+      },
+      "alona": {
+        "name": "Alona SLIUSARENKO",
+        "description": "Lorem ipsum dolor sit amet"
+      },
+      "anthony": {
+        "name": "Anthony LABAERE",
+        "description": "Lorem ipsum dolor sit amet"
+      },
+      "bastien": {
+        "name": "Bastien GALERNEAU",
+        "description": "Lorem ipsum dolor sit amet"
+      },
+      "eric": {
+        "name": "Éric COURTIAL",
+        "description": "Lorem ipsum dolor sit amet"
+      },
+      "odile": {
+        "name": "Odile COURTIAL",
+        "description": "Lorem ipsum dolor sit amet"
+      },
+      "thais": {
+        "name": "Thaïs ARRIBARD",
+        "description": "Lorem ipsum dolor sit amet"
+      },
+      "valentin": {
+        "name": "Valentin GAUFFRE",
+        "description": "Lorem ipsum dolor sit amet"
+      },
+      "youcef": {
+        "name": "Youcef GUELLIL",
+        "description": "Lorem ipsum dolor sit amet"
+      }
+    },
     "contact": {
       "phone": "07xxxxtodo",
       "email": "volya.todo@todo.fr",
@@ -42,6 +80,32 @@
     },
     "calendar": {
       "title": "Calendrier Volya"
+    }
+  },
+  "association": {
+    "role": {
+      "title": "Rôle",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    "objective": {
+      "title": "Objectifs",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    "howToAchieveIt": {
+      "title": "Comment y arriver ?",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    },
+    "team": {
+      "title": "Notre équipe"
+    },
+    "partners": {
+      "title": "Nos partenaires"
+    },
+    "donors": {
+      "title": "Nos donateurs"
+    },
+    "communityLife": {
+      "title": "Vie associative"
     }
   },
   "footer": {
