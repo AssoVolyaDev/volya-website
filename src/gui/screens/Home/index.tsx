@@ -11,7 +11,7 @@ import {
   InnerPageContainer,
   PageContainer
 } from '../../components/pageContainer';
-import CollectionSiteImg from '../../../assets/images/collectionSite.png';
+import CollectionSiteImg from '../../../assets/images/collection-site.png';
 import MapMarker from '../../components/Marker';
 
 const Home = (): ReactElement => {

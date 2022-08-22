@@ -1,3 +1,7 @@
+import * as Types from '../types';
+import FemaleMemberImg from '../assets/images/female-member.png';
+import MaleMemberImg from '../assets/images/male-member.png';
+
 export const DEVICE_SIZES = {
   mobileXS: 400,
   mobile: 580,
@@ -27,3 +31,46 @@ export const COLLECTION_SITE_COORDINATES = {
   lat: 47.203992497740195,
   lng: -1.568377677738861
 };
+
+export const TEAM_MEMBERS: Types.TeamMember[] = [
+  {
+    id: 'nataliya',
+    picture: FemaleMemberImg
+  },
+  {
+    id: 'alona',
+    picture: FemaleMemberImg
+  },
+  {
+    id: 'anthony',
+    picture: MaleMemberImg
+  },
+  {
+    id: 'bastien',
+    picture: MaleMemberImg
+  },
+  {
+    id: 'eric',
+    picture: MaleMemberImg
+  },
+  {
+    id: 'odile',
+    picture: FemaleMemberImg
+  },
+  {
+    id: 'thais',
+    picture: FemaleMemberImg
+  },
+  {
+    id: 'valentin',
+    picture: MaleMemberImg
+  },
+  {
+    id: 'youcef',
+    picture: MaleMemberImg
+  }
+];
+
+export const PARTNERS = [];
+
+export const DONORS = [];

@@ -7,11 +7,11 @@ import Footer from './gui/components/footer';
 import Navbar from './gui/components/navbar';
 import Loading from './gui/components/Loading';
 
-import Home from './gui/screens/Home';
+// import Home from './gui/screens/Home';
 import Association from './gui/screens/Association';
-import Projects from './gui/screens/Projects';
+// import Projects from './gui/screens/Projects';
 import Contact from './gui/screens/Contact';
-import Blog from './gui/screens/Blog';
+// import Blog from './gui/screens/Blog';
 
 import LegalNotices from './gui/screens/LegalNotices';
 import CGU from './gui/screens/CGU';
@@ -36,11 +36,12 @@ const App = (): ReactElement => {
               <Navbar />
 
               <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/association" element={<Association />} />
-                <Route path="/projets" element={<Projects />} />
+                <Route path="/" element={<Association />} />
+                {/* <Route path="/" element={<Home />} /> */}
+                {/* <Route path="/association" element={<Association />} /> */}
+                {/* <Route path="/projets" element={<Projects />} /> */}
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/blog" element={<Blog />} />
+                {/* <Route path="/blog" element={<Blog />} /> */}
 
                 <Route path="/mentions-legales" element={<LegalNotices />} />
                 <Route path="/cgu" element={<CGU />} />
