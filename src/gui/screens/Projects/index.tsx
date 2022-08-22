@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { ReactElement } from 'react';
 
-import { ContentContainer } from '../../components/common'
-import { ContentPageContainer, InnerPageContainer, PageContainer } from '../../components/pageContainer'
+import { ContentContainer } from '../../components/common';
+import {
+  ContentPageContainer,
+  InnerPageContainer,
+  PageContainer
+} from '../../components/pageContainer';
 
-const Projects = () => {
+const Projects = (): ReactElement => {
   return (
     <PageContainer>
       <InnerPageContainer>
@@ -14,7 +18,7 @@ const Projects = () => {
         </ContentPageContainer>
       </InnerPageContainer>
     </PageContainer>
-  )
-}
+  );
+};
 
-export default Projects
+export default Projects;

@@ -1,11 +1,12 @@
-import { Spinner } from "react-bootstrap";
+import { ReactElement } from 'react';
+import { Spinner } from 'react-bootstrap';
 
-function Loading() {
+function Loading(): ReactElement {
   return (
     <Spinner animation="border" role="status">
       <span className="visually-hidden">Loading...</span>
     </Spinner>
-  )
+  );
 }
 
 export default Loading;

@@ -1,11 +1,11 @@
-import React, { Suspense, useState } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { ThemeProvider } from 'styled-components'
+import React, { ReactElement, Suspense, useState } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
 import './style/bootstrap.scss';
 
-import Footer from './gui/components/footer'
-import Navbar from './gui/components/navbar'
-import Loading from './gui/components/Loading'
+import Footer from './gui/components/footer';
+import Navbar from './gui/components/navbar';
+import Loading from './gui/components/Loading';
 
 import Home from './gui/screens/Home';
 import Association from './gui/screens/Association';
@@ -15,13 +15,13 @@ import Blog from './gui/screens/Blog';
 
 import LegalNotices from './gui/screens/LegalNotices';
 import CGU from './gui/screens/CGU';
-import { GlobalStyles } from './style/global'
-import { theme } from './style/theme'
+import { GlobalStyles } from './style/global';
+import { theme } from './style/theme';
 
 import i18n from './i18n';
-import LocaleContext from './LocaleContext'
+import LocaleContext from './LocaleContext';
 
-function App() {
+const App = (): ReactElement => {
   const [locale, setLocale] = useState(i18n.language);
   i18n.on('languageChanged', (lng) => setLocale(i18n.language));
 
@@ -52,8 +52,8 @@ function App() {
           </Suspense>
         </LocaleContext.Provider>
       </ThemeProvider>
-    </div >
-  )
-}
+    </div>
+  );
+};
 
-export default App
+export default App;

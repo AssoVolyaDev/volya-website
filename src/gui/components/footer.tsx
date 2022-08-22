@@ -1,15 +1,21 @@
-import React from 'react'
-import { useTranslation } from 'react-i18next'
-import { faFacebook, faInstagram, faLinkedinIn, faTiktok, faYoutube } from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import styled from 'styled-components'
+import React, { ReactElement } from 'react';
+import { useTranslation } from 'react-i18next';
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedinIn,
+  faTiktok,
+  faYoutube
+} from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import styled from 'styled-components';
 
 import * as Constants from '../../constants';
 import { StyledLink } from '../components/common';
-import Marginer from './marginer'
+import Marginer from './marginer';
 
-const GREY_COLOR = '#353535'
-const GREY_HOVER_COLOR = '#666666'
+const GREY_COLOR = '#353535';
+const GREY_HOVER_COLOR = '#666666';
 
 const FooterContainer = styled.div`
   width: 100%;
@@ -30,7 +36,7 @@ const FooterContainer = styled.div`
   }
 
   padding-bottom: 0;
-`
+`;
 
 const TopContainer = styled.div`
   width: 100%;
@@ -39,12 +45,12 @@ const TopContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-bottom: 1rem;
-`
+`;
 
 const TopContentContainer = styled.div`
   width: 100%;
   max-width: ${({ theme }) => theme.deviceSizes.laptop};
-`
+`;
 
 const ContentContainer = styled.div<{ isMobile?: boolean }>`
   display: flex;
@@ -54,7 +60,7 @@ const ContentContainer = styled.div<{ isMobile?: boolean }>`
   @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileXL}) {
     flex-direction: column;
   }
-`
+`;
 
 const BottomContainer = styled.span`
   display: flex;
@@ -66,7 +72,7 @@ const BottomContainer = styled.span`
   @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileXL}) {
     padding: 0;
   }
-`
+`;
 
 const TopSubContainer = styled.span`
   display: flex;
@@ -75,7 +81,7 @@ const TopSubContainer = styled.span`
   margin-left: 1rem;
   margin-right: 1rem;
   text-align: justify;
-`
+`;
 
 const Title = styled.h2`
   margin: 0;
@@ -83,7 +89,7 @@ const Title = styled.h2`
   color: white;
   font-weight: 600;
   font-size: 20px;
-`
+`;
 
 const SocialIconContainer = styled.div`
   display: flex;
@@ -92,7 +98,7 @@ const SocialIconContainer = styled.div`
   a {
     display: inline-block;
   }
-`
+`;
 
 const SocialIcon = styled.div`
   color: ${GREY_COLOR};
@@ -104,7 +110,7 @@ const SocialIcon = styled.div`
   &:hover {
     color: ${GREY_HOVER_COLOR};
   }
-`
+`;
 
 const BottomStyledLink = styled(StyledLink)`
   color: ${GREY_COLOR};
@@ -113,9 +119,9 @@ const BottomStyledLink = styled(StyledLink)`
   &:hover {
     color: ${GREY_HOVER_COLOR};
   }
-`
+`;
 
-const Footer = () => {
+const Footer = (): ReactElement => {
   const { t } = useTranslation();
 
   return (
@@ -124,11 +130,19 @@ const Footer = () => {
         <TopContentContainer>
           <ContentContainer>
             <TopSubContainer>
-              <Title>{t("footer.iNeedHelp")} | {t("footer.iWantToHelp")}</Title>
-              <h2>{t("footer.contact")}</h2>
-              <p>{t("footer.phone")} : {t("global.contact.phone")}</p>
-              <p>{t("footer.email")} : {t("global.contact.email")}</p>
-              <p>{t("footer.address")} : {t("global.contact.address")}</p>
+              <Title>
+                {t('footer.iNeedHelp')} | {t('footer.iWantToHelp')}
+              </Title>
+              <h2>{t('footer.contact')}</h2>
+              <p>
+                {t('footer.phone')} : {t('global.contact.phone')}
+              </p>
+              <p>
+                {t('footer.email')} : {t('global.contact.email')}
+              </p>
+              <p>
+                {t('footer.address')} : {t('global.contact.address')}
+              </p>
             </TopSubContainer>
             <TopSubContainer style={{ alignItems: 'flex-end' }}>
               <SocialIconContainer>
@@ -137,7 +151,7 @@ const Footer = () => {
                     <SocialIcon>
                       <FontAwesomeIcon icon={faInstagram} />
                     </SocialIcon>
-                    <span className="sr-only">{t("footer.socialNetworks.instagram")}</span>
+                    <span className="sr-only">{t('footer.socialNetworks.instagram')}</span>
                   </a>
                   <span>{Constants.SOCIAL_NETWORKS_URLS.instagram}</span>
                 </span>
@@ -147,7 +161,7 @@ const Footer = () => {
                     <SocialIcon>
                       <FontAwesomeIcon icon={faFacebook} />
                     </SocialIcon>
-                    <span className="sr-only">{t("footer.socialNetworks.facebook")}</span>
+                    <span className="sr-only">{t('footer.socialNetworks.facebook')}</span>
                   </a>
                   <span>{Constants.SOCIAL_NETWORKS_URLS.facebook}</span>
                 </span>
@@ -157,7 +171,7 @@ const Footer = () => {
                     <SocialIcon>
                       <FontAwesomeIcon icon={faYoutube} />
                     </SocialIcon>
-                    <span className="sr-only">{t("footer.socialNetworks.youtube")}</span>
+                    <span className="sr-only">{t('footer.socialNetworks.youtube')}</span>
                   </a>
                   <span>{Constants.SOCIAL_NETWORKS_URLS.youtube}</span>
                 </span>
@@ -167,7 +181,7 @@ const Footer = () => {
                     <SocialIcon>
                       <FontAwesomeIcon icon={faLinkedinIn} />
                     </SocialIcon>
-                    <span className="sr-only">{t("footer.socialNetworks.linkedin")}</span>
+                    <span className="sr-only">{t('footer.socialNetworks.linkedin')}</span>
                   </a>
                   <span>{Constants.SOCIAL_NETWORKS_URLS.linkedin}</span>
                 </span>
@@ -177,7 +191,7 @@ const Footer = () => {
                     <SocialIcon>
                       <FontAwesomeIcon icon={faTiktok} />
                     </SocialIcon>
-                    <span className="sr-only">{t("footer.socialNetworks.tiktok")}</span>
+                    <span className="sr-only">{t('footer.socialNetworks.tiktok')}</span>
                   </a>
                   <span>{Constants.SOCIAL_NETWORKS_URLS.tiktok}</span>
                 </span>
@@ -188,12 +202,12 @@ const Footer = () => {
       </TopContainer>
 
       <BottomContainer>
-        <BottomStyledLink to="/cgu">{t("footer.gcu")}</BottomStyledLink>
+        <BottomStyledLink to="/cgu">{t('footer.gcu')}</BottomStyledLink>
         <Marginer direction="horizontal" margin={15} />
-        <BottomStyledLink to="/mentions-legales">{t("footer.legalNotices")}</BottomStyledLink>
+        <BottomStyledLink to="/mentions-legales">{t('footer.legalNotices')}</BottomStyledLink>
       </BottomContainer>
     </FooterContainer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

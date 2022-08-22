@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { ReactElement } from 'react';
 
-import { ContentContainer } from '../../components/common'
-import { ContentPageContainer, InnerPageContainer, PageContainer } from '../../components/pageContainer'
+import { ContentContainer } from '../../components/common';
+import {
+  ContentPageContainer,
+  InnerPageContainer,
+  PageContainer
+} from '../../components/pageContainer';
 
-const Association = () => {
+const Association = (): ReactElement => {
   return (
     <PageContainer>
       <InnerPageContainer>
@@ -14,7 +18,7 @@ const Association = () => {
         </ContentPageContainer>
       </InnerPageContainer>
     </PageContainer>
-  )
-}
+  );
+};
 
-export default Association
+export default Association;
