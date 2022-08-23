@@ -22,7 +22,8 @@ module.exports = {
   },
   plugins: ['react'],
   rules: {
-    'react/react-in-jsx-scope': 'off'
+    'react/react-in-jsx-scope': 'off',
+    '@typescript-eslint/restrict-template-expressions': 'off'
   },
   ignorePatterns: ['build/*', 'node_modules/*'],
   settings: {
