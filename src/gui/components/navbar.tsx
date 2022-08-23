@@ -1,7 +1,7 @@
 import React, { ReactElement, useContext } from 'react';
 import { useTranslation } from 'react-i18next';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
+// import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -38,7 +38,7 @@ const VolyaNavbar = (): ReactElement => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="justify-content-end flex-grow-1 pe-3">
-            <Form className="d-flex">
+            {/* <Form className="d-flex">
               <Form.Control
                 type="search"
                 // TODO Ajouter une loupe
@@ -46,7 +46,7 @@ const VolyaNavbar = (): ReactElement => {
                 className="me-2"
                 aria-label="Search"
               />
-            </Form>
+            </Form> */}
             <Nav.Link href="/">{t('menu.home')}</Nav.Link>
             {/* <Nav.Link href="/">{t('menu.home')}</Nav.Link> */}
             {/* <Nav.Link href="/association">{t('menu.association')}</Nav.Link> */}
