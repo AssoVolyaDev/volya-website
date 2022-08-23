@@ -20,6 +20,10 @@ export const ContentContainer = styled.div`
     text-align: center;
   }
 
+  > h2 {
+    margin-bottom: 30px;
+  }
+
   @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileXL}) {
     padding: 5px;
   }

@@ -157,8 +157,7 @@ const Contact = (): ReactElement => {
         </ContentPageContainer>
         <ContactFormContentContainer>
           <h2 style={{ textAlign: 'center', marginBottom: 50 }}>
-            Une question sur l&apos;application ou l&apos;un des scénarios ? Merci de remplir le
-            formulaire ci-dessous :
+            Envie d&apos;aider l&apos;asso TODO :
           </h2>
           <Form onSubmit={formik.handleSubmit}>
             <InputContainer>

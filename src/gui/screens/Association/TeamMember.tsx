@@ -28,9 +28,7 @@ function TeamMember({ teamMember, position }: TeamMemberInterface): ReactElement
   const text = (
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
       {/* TODO : comprendre pourquoi cette règle fait ça ?! */}
-      {/* eslint-disable-next-line @typescript-eslint/restrict-template-expressions */}
       <h5>{t(`global.members.${teamMember.id}.name`)}</h5>
-      {/* eslint-disable-next-line @typescript-eslint/restrict-template-expressions */}
       <h5>{t(`global.members.${teamMember.id}.description`)}</h5>
     </div>
   );
