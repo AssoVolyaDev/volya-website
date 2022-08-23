@@ -2,6 +2,8 @@ import React, { ReactElement, Suspense, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import './style/bootstrap.scss';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Footer from './gui/components/footer';
 import Navbar from './gui/components/navbar';
@@ -48,6 +50,7 @@ const App = (): ReactElement => {
                 {/* TODO obligatoire <Route path="/confidentialite" element={<PrivacyPolicy />} /> */}
                 {/* TODO obligatoire (redirection à partir de PrivacyPolicy) <Route path="/cookies" element={<Cookies />} /> */}
               </Routes>
+              <ToastContainer />
               <Footer />
             </BrowserRouter>
           </Suspense>
