@@ -103,7 +103,10 @@
       "title": "Nos partenaires"
     },
     "donors": {
-      "title": "Nos donateurs"
+      "title": "Nos donateurs",
+      "thanks": "Remerciements à nos donateurs",
+      "quote": "consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua",
+      "author": "Author of quote"
     },
     "communityLife": {
       "title": "Vie associative"

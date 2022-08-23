@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
+import styled from 'styled-components';
 
 import * as Constants from '../../../constants';
 import { ContentContainer } from '../../components/common';
@@ -10,6 +11,27 @@ import {
 } from '../../components/pageContainer';
 import TeamMember from './TeamMember';
 
+import RoleImg from '../../../assets/images/role.png';
+import ObjectiveImg from '../../../assets/images/objective.png';
+import HowToAchieveItImg from '../../../assets/images/howToAchieveIt.png';
+
+type TextInformationPosition = 'left' | 'right';
+
+const InformationContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+  align-items: center;
+`;
+
+const InformationTextSubContainer = styled.div<{ position: TextInformationPosition }>`
+  display: flex;
+  flex-direction: column;
+  // TODO : à rendre responsive et surtout à retirer sur mobile
+  ${({ position }) => position === 'left' && 'margin-left: 30px;margin-right: 500px'};
+  ${({ position }) => position === 'right' && 'margin-left: 500px;margin-right:30px'};
+`;
+
 const Association = (): ReactElement => {
   const { t } = useTranslation();
 
@@ -19,14 +41,48 @@ const Association = (): ReactElement => {
         <ContentPageContainer coloredBackground>
           <ContentContainer>
             <h1>{t('association.title')}</h1>
-            <h3>{t('association.role.title')}</h3>
-            <p>{t('association.role.description')}</p>
 
-            <h3>{t('association.objective.title')}</h3>
-            <p>{t('association.objective.description')}</p>
+            <InformationContainer>
+              <img
+                src={RoleImg}
+                width="150"
+                height="150"
+                className="d-inline-block align-top"
+                alt="role icon"
+              />
+              <InformationTextSubContainer position="left">
+                <h3>{t('association.role.title')}</h3>
+                <p>{t('association.role.description')}</p>
+              </InformationTextSubContainer>
+            </InformationContainer>
 
-            <h3>{t('association.howToAchieveIt.title')}</h3>
-            <p>{t('association.howToAchieveIt.description')}</p>
+            <InformationContainer>
+              <InformationTextSubContainer position="right">
+                <h3>{t('association.objective.title')}</h3>
+                <p>{t('association.objective.description')}</p>
+              </InformationTextSubContainer>
+              <img
+                src={ObjectiveImg}
+                width="150"
+                height="150"
+                className="d-inline-block align-top"
+                alt="objective icon"
+              />
+            </InformationContainer>
+
+            <InformationContainer>
+              <img
+                src={HowToAchieveItImg}
+                width="150"
+                height="150"
+                className="d-inline-block align-top"
+                alt="how to achieve it icon"
+              />
+              <InformationTextSubContainer position="left">
+                <h3>{t('association.howToAchieveIt.title')}</h3>
+                <p>{t('association.howToAchieveIt.description')}</p>
+              </InformationTextSubContainer>
+            </InformationContainer>
           </ContentContainer>
         </ContentPageContainer>
 
@@ -59,6 +115,9 @@ const Association = (): ReactElement => {
           <ContentPageContainer>
             <ContentContainer>
               <h2>{t('association.donors.title')}</h2>
+              <p>{t('association.donors.thanks')}</p>
+              <p style={{ fontStyle: 'italic' }}>{t('association.donors.quote')}</p>
+              <p style={{ fontStyle: 'italic' }}>{t('association.donors.author')}</p>
             </ContentContainer>
           </ContentPageContainer>
         )}
