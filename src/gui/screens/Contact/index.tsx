@@ -102,7 +102,7 @@ const Contact = (): ReactElement => {
     subject?: string;
     message?: string;
   }): ContactFormError => {
-    console.log('values', values);
+    // console.log('values', values);
     const errors: ContactFormError = {};
     if (values.lastName === undefined || values.lastName === null || values.lastName.length === 0) {
       errors.lastName = 'Champ requis';
@@ -124,7 +124,7 @@ const Contact = (): ReactElement => {
       errors.message = 'Champ requis';
     }
 
-    console.log('errors', errors);
+    // console.log('errors', errors);
     return errors;
   };
 
