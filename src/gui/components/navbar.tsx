@@ -1,4 +1,4 @@
-import React, { ReactElement, useContext } from 'react';
+import React, { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
 import Container from 'react-bootstrap/Container';
 // import Form from 'react-bootstrap/Form';
@@ -8,13 +8,13 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import LogoImg from '../../assets/images/logo.png';
-import LocaleContext from '../../LocaleContext';
+import useLocale from '../../hooks/useLocale';
 import i18n from '../../i18n';
 
 const VolyaNavbar = (): ReactElement => {
   const { t } = useTranslation();
 
-  const { locale } = useContext(LocaleContext);
+  const { locale, shortLocale } = useLocale();
 
   const changeLocale = (l: string): void => {
     if (locale !== l) {
@@ -53,9 +53,7 @@ const VolyaNavbar = (): ReactElement => {
             {/* <Nav.Link href="/projets">{t('menu.projects')}</Nav.Link> */}
             <Nav.Link href="/contact">{t('menu.contact')}</Nav.Link>
             {/* <Nav.Link href="/blog">{t('menu.blog')}</Nav.Link> */}
-            <NavDropdown
-              title={t(`menu.locale.${locale.split('-')[0]}`)}
-              id="navbarScrollingDropdown">
+            <NavDropdown title={t(`menu.locale.${shortLocale}`)} id="navbarScrollingDropdown">
               <NavDropdown.Item onClick={() => changeLocale('fr')}>Français</NavDropdown.Item>
               <NavDropdown.Item onClick={() => changeLocale('uk')}>Yкраїнська</NavDropdown.Item>
               <NavDropdown.Item onClick={() => changeLocale('en')}>English</NavDropdown.Item>

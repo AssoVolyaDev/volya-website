@@ -1,46 +1,26 @@
-# Getting Started with Create React App
+Deux projets Github : 
+- volya-website pour le code du site internet
+- volya-firebase pour tout ce qui touche aux serveurs Firebase (dev et prod) : VolyaDev et Volya.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+volya-website :
+Le code du site internet
+- Utiliser yarn et pas npm
+- Le "framework" : reactjs
+- Le design : bootstrap
+- Les icônes : flaticon (utilisation de l'abonnement de shoesnotincluded)
+- Les traductions (i18n : fichiers à traduire dans public/locales/<langage>
+- L'hébergement : netlify (celui de shoesnotincluded - pas de possibilité d'ajouter d'autres membres sur la version gratuite - TODO : créer un compte Netlify propre à Volya)
+- Les commandes : cf scripts de package.json
+- Pour lancer le site en local : "yarn start:local" (utilisation du Firebase de dev VolyaDev) ou "yarn start" (utilisation du Firebase de prod Volya)
+ATTENTION un push sur master met à jour le site en prod, d'où l'intérêt de la branche dev
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+volya-firebase :
+Tout ce qui touche aux serveurs Firebase (dev et prod) : VolyaDev et Volya.
+- Utiliser yarn et pas npm
+- firestore.rules : les règles d'accès aux données des serveurs (pour l'instant identique en dev et prod)
+- pas de règles pour les documents (pour l'instant open bar en lecture mais pas d'accès en écriture)
+- Firestore : sous-projet à part pour les scripts Firestore - écriture de données comme import-teamMembers.js ou des scripts d'extraction des données de contact (TODO)
+- functions : les webservices que le site peut avoir besoin d'appeler comme une fonction d'insertion des données de contact dans firestore (pas d'écriture directe : une fonction protège mieux les données)
+ATTENTION : utiliser yarn:useDev ou yarn:useProd avant d'exporter une fonction pour impacter le bon serveur.
+AUSSI : il faut utiliser la version 14.16.0 de node pour les functions mais c'est mieux d'utiliser une version récente pour le reste (j'utilise la 16.14.0 perso) donc l'installation de nvm (pour pouvoir changer facilement de version) est nécessaire
+IMPORTANT : pas de modification à la main dans Firebase sans répercuter les modifs sur Github ;)

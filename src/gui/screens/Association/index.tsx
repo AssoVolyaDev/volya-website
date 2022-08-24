@@ -1,7 +1,9 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
+import * as TeamMemberFirestore from '../../../firebase/firestore/teamMembersFirestore';
 
+import * as Types from '../../../types';
 import * as Constants from '../../../constants';
 import { ContentContainer } from '../../components/common';
 import {
@@ -34,6 +36,12 @@ const InformationTextSubContainer = styled.div<{ position: TextInformationPositi
 
 const Association = (): ReactElement => {
   const { t } = useTranslation();
+
+  // TODO : à utiliser à la place de Constants.TEAM_MEMBERS
+  const [teamMembers, setTeamMembers] = useState<Types.TeamMember[]>([]);
+  useEffect(() => {
+    TeamMemberFirestore.subscribeToTeamMembers(setTeamMembers);
+  }, []);
 
   return (
     <PageContainer>
@@ -86,19 +94,23 @@ const Association = (): ReactElement => {
           </ContentContainer>
         </ContentPageContainer>
 
-        {Constants.TEAM_MEMBERS !== undefined && Constants.TEAM_MEMBERS.length > 0 && (
+        {teamMembers !== undefined && teamMembers.length > 0 && (
           <ContentPageContainer>
             <ContentContainer>
               <h2>{t('association.team.title')}</h2>
-              {Constants.TEAM_MEMBERS.map((teamMember, index) => {
-                return (
-                  <TeamMember
-                    key={index}
-                    teamMember={teamMember}
-                    position={index % 2 === 0 ? 'left' : 'right'}
-                  />
-                );
-              })}
+              {teamMembers
+                .sort((teamMember: Types.TeamMember, otherTeamMember: Types.TeamMember) => {
+                  return teamMember.ordre - otherTeamMember.ordre;
+                })
+                .map((teamMember, index) => {
+                  return (
+                    <TeamMember
+                      key={index}
+                      teamMember={teamMember}
+                      position={index % 2 === 0 ? 'left' : 'right'}
+                    />
+                  );
+                })}
             </ContentContainer>
           </ContentPageContainer>
         )}

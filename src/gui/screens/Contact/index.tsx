@@ -3,7 +3,7 @@ import { useFormik } from 'formik';
 import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
 
-// import * as FirebaseFunctions from '../../../firebase/functions';
+import * as FirebaseFunctions from '../../../firebase/functions';
 import { Theme } from '../../../style/theme';
 import { ContentContainer } from '../../components/common';
 import {
@@ -102,7 +102,7 @@ const Contact = (): ReactElement => {
     subject?: string;
     message?: string;
   }): ContactFormError => {
-    console.log('values', values);
+    // console.log('values', values);
     const errors: ContactFormError = {};
     if (values.lastName === undefined || values.lastName === null || values.lastName.length === 0) {
       errors.lastName = 'Champ requis';
@@ -124,7 +124,7 @@ const Contact = (): ReactElement => {
       errors.message = 'Champ requis';
     }
 
-    console.log('errors', errors);
+    // console.log('errors', errors);
     return errors;
   };
 
@@ -138,12 +138,20 @@ const Contact = (): ReactElement => {
     },
     validate,
     onSubmit: (values, { setSubmitting }) => {
-      // FirebaseFunctions.contact(values.lastName, values.firstName, values.email, values.subject, values.message, () => {
-      NotificationUtils.handleMessage(
-        `Votre message a été envoyé. Nous vous répondrons dès que possible.`
+      FirebaseFunctions.contact(
+        values.lastName,
+        values.firstName,
+        values.email,
+        values.subject,
+        values.message,
+        () => {
+          NotificationUtils.handleMessage(
+            `Votre message a été envoyé. Nous vous répondrons dès que possible.`
+          );
+          setSubmitting(false);
+        },
+        () => setSubmitting(false)
       );
-      setSubmitting(false);
-      // }, () => setSubmitting(false));
     }
   });
 

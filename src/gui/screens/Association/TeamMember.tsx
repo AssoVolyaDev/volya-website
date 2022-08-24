@@ -1,6 +1,6 @@
 import { ReactElement } from 'react';
-import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
+import useLocale from '../../../hooks/useLocale';
 
 import * as Types from '../../../types';
 
@@ -23,18 +23,16 @@ const TeamMemberContainer = styled.div<{ position: TeamMemberPosition }>`
 `;
 
 function TeamMember({ teamMember, position }: TeamMemberInterface): ReactElement {
-  const { t } = useTranslation();
-
+  const { shortLocale } = useLocale();
   const text = (
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-      {/* TODO : comprendre pourquoi cette règle fait ça ?! */}
-      <h5>{t(`global.members.${teamMember.id}.name`)}</h5>
-      <h5>{t(`global.members.${teamMember.id}.description`)}</h5>
+      <h5>{teamMember.pseudo[shortLocale as keyof Types.I18nText]}</h5>
+      {/* <h5>{teamMember.description[shortLocale as keyof Types.I18nText]}</h5> */}
     </div>
   );
   const image = (
     <img
-      src={teamMember.picture}
+      src={teamMember.imageProfileUrl}
       width="100"
       height="100"
       className="d-inline-block align-top"
