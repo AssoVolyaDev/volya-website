@@ -1,6 +1,6 @@
 import React, { ReactElement, useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import * as TeamMemberFirestore from '../../../firebase/firestore/teamMembersFirestore';
 
 import * as Types from '../../../types';
@@ -13,26 +13,26 @@ import {
 } from '../../components/pageContainer';
 import TeamMember from './TeamMember';
 
-import RoleImg from '../../../assets/images/role.png';
-import ObjectiveImg from '../../../assets/images/objective.png';
-import HowToAchieveItImg from '../../../assets/images/howToAchieveIt.png';
+// import RoleImg from '../../../assets/images/role.png';
+// import ObjectiveImg from '../../../assets/images/objective.png';
+// import HowToAchieveItImg from '../../../assets/images/howToAchieveIt.png';
 
-type TextInformationPosition = 'left' | 'right';
+// type TextInformationPosition = 'left' | 'right';
 
-const InformationContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  margin-bottom: 30px;
-  align-items: center;
-`;
+// const InformationContainer = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   margin-bottom: 30px;
+//   align-items: center;
+// `;
 
-const InformationTextSubContainer = styled.div<{ position: TextInformationPosition }>`
-  display: flex;
-  flex-direction: column;
-  // TODO : à rendre responsive et surtout à retirer sur mobile
-  ${({ position }) => position === 'left' && 'margin-left: 30px;margin-right: 500px'};
-  ${({ position }) => position === 'right' && 'margin-left: 500px;margin-right:30px'};
-`;
+// const InformationTextSubContainer = styled.div<{ position: TextInformationPosition }>`
+//   display: flex;
+//   flex-direction: column;
+//   // TODO : à rendre responsive et surtout à retirer sur mobile
+//   ${({ position }) => position === 'left' && 'margin-left: 30px;margin-right: 500px'};
+//   ${({ position }) => position === 'right' && 'margin-left: 500px;margin-right:30px'};
+// `;
 
 const Association = (): ReactElement => {
   const { t } = useTranslation();
@@ -46,7 +46,8 @@ const Association = (): ReactElement => {
   return (
     <PageContainer>
       <InnerPageContainer>
-        <ContentPageContainer coloredBackground>
+        {/* TODO : à remettre quand on aura du contenu */}
+        {/* <ContentPageContainer coloredBackground>
           <ContentContainer>
             <h1>{t('association.title')}</h1>
 
@@ -92,7 +93,7 @@ const Association = (): ReactElement => {
               </InformationTextSubContainer>
             </InformationContainer>
           </ContentContainer>
-        </ContentPageContainer>
+        </ContentPageContainer> */}
 
         {teamMembers !== undefined && teamMembers.length > 0 && (
           <ContentPageContainer>
@@ -134,11 +135,12 @@ const Association = (): ReactElement => {
           </ContentPageContainer>
         )}
 
-        <ContentPageContainer coloredBackground="other">
+        {/* TODO - à faire ! */}
+        {/* <ContentPageContainer coloredBackground="other">
           <ContentContainer>
             <h2>{t('association.communityLife.title')}</h2>
           </ContentContainer>
-        </ContentPageContainer>
+        </ContentPageContainer> */}
       </InnerPageContainer>
     </PageContainer>
   );

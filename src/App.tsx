@@ -12,11 +12,11 @@ import Loading from './gui/components/Loading';
 // import Home from './gui/screens/Home';
 import Association from './gui/screens/Association';
 // import Projects from './gui/screens/Projects';
-import Contact from './gui/screens/Contact';
+// import Contact from './gui/screens/Contact';
 // import Blog from './gui/screens/Blog';
 
-import LegalNotices from './gui/screens/LegalNotices';
-import CGU from './gui/screens/CGU';
+// import LegalNotices from './gui/screens/LegalNotices';
+// import CGU from './gui/screens/CGU';
 import { GlobalStyles } from './style/global';
 import { theme } from './style/theme';
 
@@ -42,11 +42,13 @@ const App = (): ReactElement => {
                 {/* <Route path="/" element={<Home />} /> */}
                 {/* <Route path="/association" element={<Association />} /> */}
                 {/* <Route path="/projets" element={<Projects />} /> */}
-                <Route path="/contact" element={<Contact />} />
+                {/* TODO : à remettre quand ça sera prêt */}
+                {/* <Route path="/contact" element={<Contact />} /> */}
                 {/* <Route path="/blog" element={<Blog />} /> */}
 
-                <Route path="/mentions-legales" element={<LegalNotices />} />
-                <Route path="/cgu" element={<CGU />} />
+                {/* TODO : à remettre quand ça sera prêt */}
+                {/* <Route path="/mentions-legales" element={<LegalNotices />} />
+                <Route path="/cgu" element={<CGU />} /> */}
                 {/* TODO obligatoire <Route path="/confidentialite" element={<PrivacyPolicy />} /> */}
                 {/* TODO obligatoire (redirection à partir de PrivacyPolicy) <Route path="/cookies" element={<Cookies />} /> */}
               </Routes>

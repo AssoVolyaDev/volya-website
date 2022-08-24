@@ -2,17 +2,17 @@ import React, { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   faFacebook,
-  faInstagram,
-  faLinkedinIn,
-  faTiktok,
-  faYoutube
+  faInstagram
+  // faLinkedinIn,
+  // faTiktok,
+  // faYoutube
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 
 import * as Constants from '../../constants';
-import { StyledLink } from '../components/common';
-import Marginer from './marginer';
+// import { StyledLink } from '../components/common';
+// import Marginer from './marginer';
 
 const GREY_COLOR = '#353535';
 const GREY_HOVER_COLOR = '#666666';
@@ -62,17 +62,17 @@ const ContentContainer = styled.div<{ isMobile?: boolean }>`
   }
 `;
 
-const BottomContainer = styled.span`
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 70px;
-  padding: 0 10px;
+// const BottomContainer = styled.span`
+//   display: flex;
+//   justify-content: center;
+//   align-items: flex-start;
+//   height: 70px;
+//   padding: 0 10px;
 
-  @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileXL}) {
-    padding: 0;
-  }
-`;
+//   @media screen and (max-width: ${({ theme }) => theme.deviceSizes.mobileXL}) {
+//     padding: 0;
+//   }
+// `;
 
 const TopSubContainer = styled.span`
   display: flex;
@@ -83,13 +83,13 @@ const TopSubContainer = styled.span`
   text-align: justify;
 `;
 
-const Title = styled.h2`
-  margin: 0;
-  margin-bottom: 25px;
-  color: white;
-  font-weight: 600;
-  font-size: 20px;
-`;
+// const Title = styled.h2`
+//   margin: 0;
+//   margin-bottom: 25px;
+//   color: white;
+//   font-weight: 600;
+//   font-size: 20px;
+// `;
 
 const SocialIconContainer = styled.div`
   display: flex;
@@ -102,7 +102,7 @@ const SocialIconContainer = styled.div`
 
 const SocialIcon = styled.div`
   color: ${GREY_COLOR};
-  font-size: 30px;
+  font-size: 40px;
   margin: 0 10px;
   cursor: pointer;
   transition: background-color, 200ms ease-in-out;
@@ -112,14 +112,14 @@ const SocialIcon = styled.div`
   }
 `;
 
-const BottomStyledLink = styled(StyledLink)`
-  color: ${GREY_COLOR};
-  font-size: 1.25rem;
+// const BottomStyledLink = styled(StyledLink)`
+//   color: ${GREY_COLOR};
+//   font-size: 1.25rem;
 
-  &:hover {
-    color: ${GREY_HOVER_COLOR};
-  }
-`;
+//   &:hover {
+//     color: ${GREY_HOVER_COLOR};
+//   }
+// `;
 
 const Footer = (): ReactElement => {
   const { t } = useTranslation();
@@ -130,19 +130,22 @@ const Footer = (): ReactElement => {
         <TopContentContainer>
           <ContentContainer>
             <TopSubContainer>
-              <Title>
+              {/* TODO : à remettre quand ça sera prêt - lien vers contact */}
+              {/* <Title>
                 {t('footer.iNeedHelp')} | {t('footer.iWantToHelp')}
-              </Title>
+              </Title> */}
               <h2>{t('footer.contact')}</h2>
-              <p>
+              {/* TODO : à remettre quand ça sera prêt */}
+              {/* <p>
                 {t('footer.phone')} : {t('global.contact.phone')}
-              </p>
+              </p> */}
               <p>
                 {t('footer.email')} : {t('global.contact.email')}
               </p>
-              <p>
+              {/* TODO : à faire */}
+              {/* <p>
                 {t('footer.address')} : {t('global.contact.address')}
-              </p>
+              </p> */}
             </TopSubContainer>
             <TopSubContainer style={{ alignItems: 'flex-end' }}>
               <SocialIconContainer>
@@ -153,7 +156,7 @@ const Footer = (): ReactElement => {
                     </SocialIcon>
                     <span className="sr-only">{t('footer.socialNetworks.instagram')}</span>
                   </a>
-                  <span>{Constants.SOCIAL_NETWORKS_URLS.instagram}</span>
+                  {/* <span>{Constants.SOCIAL_NETWORKS_URLS.instagram}</span> */}
                 </span>
 
                 <span>
@@ -163,10 +166,11 @@ const Footer = (): ReactElement => {
                     </SocialIcon>
                     <span className="sr-only">{t('footer.socialNetworks.facebook')}</span>
                   </a>
-                  <span>{Constants.SOCIAL_NETWORKS_URLS.facebook}</span>
+                  {/* <span>{Constants.SOCIAL_NETWORKS_URLS.facebook}</span> */}
                 </span>
 
-                <span>
+                {/* TODO : à faire */}
+                {/* <span>
                   <a href={Constants.SOCIAL_NETWORKS_URLS.youtube} title="Youtube">
                     <SocialIcon>
                       <FontAwesomeIcon icon={faYoutube} />
@@ -174,9 +178,10 @@ const Footer = (): ReactElement => {
                     <span className="sr-only">{t('footer.socialNetworks.youtube')}</span>
                   </a>
                   <span>{Constants.SOCIAL_NETWORKS_URLS.youtube}</span>
-                </span>
+                </span> */}
 
-                <span>
+                {/* TODO : à faire */}
+                {/* <span>
                   <a href={Constants.SOCIAL_NETWORKS_URLS.linkedin} title="Linkedin">
                     <SocialIcon>
                       <FontAwesomeIcon icon={faLinkedinIn} />
@@ -184,9 +189,10 @@ const Footer = (): ReactElement => {
                     <span className="sr-only">{t('footer.socialNetworks.linkedin')}</span>
                   </a>
                   <span>{Constants.SOCIAL_NETWORKS_URLS.linkedin}</span>
-                </span>
+                </span> */}
 
-                <span>
+                {/* TODO : à faire */}
+                {/* <span>
                   <a href={Constants.SOCIAL_NETWORKS_URLS.tiktok} title="Tiktok">
                     <SocialIcon>
                       <FontAwesomeIcon icon={faTiktok} />
@@ -194,18 +200,19 @@ const Footer = (): ReactElement => {
                     <span className="sr-only">{t('footer.socialNetworks.tiktok')}</span>
                   </a>
                   <span>{Constants.SOCIAL_NETWORKS_URLS.tiktok}</span>
-                </span>
+                </span> */}
               </SocialIconContainer>
             </TopSubContainer>
           </ContentContainer>
         </TopContentContainer>
       </TopContainer>
 
-      <BottomContainer>
+      {/* TODO : à remettre quand ça sera prêt */}
+      {/* <BottomContainer>
         <BottomStyledLink to="/cgu">{t('footer.gcu')}</BottomStyledLink>
         <Marginer direction="horizontal" margin={15} />
         <BottomStyledLink to="/mentions-legales">{t('footer.legalNotices')}</BottomStyledLink>
-      </BottomContainer>
+      </BottomContainer> */}
     </FooterContainer>
   );
 };
