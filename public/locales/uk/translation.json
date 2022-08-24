@@ -40,7 +40,7 @@
     },
     "contact": {
       "phone": "07xxxxtodo",
-      "email": "volya.todo@todo.fr",
+      "email": "volya.asso@gmail.com",
       "address": "3 rue du TODO 44000 NANTES"
     },
     "collectionSite": {
@@ -49,10 +49,10 @@
     }
   },
   "menu": {
-    "home": "Home",
+    "home": "додому",
     "association": "Association",
     "projects": "Projects",
-    "contact": "Contact",
+    "contact": "контакт",
     "blog": "Blog",
     "search": {
       "placeholder": "Recherche"
@@ -83,6 +83,7 @@
     }
   },
   "association": {
+    "title": "Aсоціація воля",
     "role": {
       "title": "Rôle",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
@@ -96,7 +97,7 @@
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     },
     "team": {
-      "title": "Notre équipe"
+      "title": "Наша команда"
     },
     "partners": {
       "title": "Nos partenaires"
@@ -114,7 +115,7 @@
   "footer": {
     "iNeedHelp": "I need help",
     "iWantToHelp": "I want to help",
-    "contact": "Contact",
+    "contact": "контакт",
     "phone": "Phone",
     "email": "Email",
     "address": "Address",

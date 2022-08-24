@@ -8,8 +8,8 @@ export const DEVICE_SIZES = {
 };
 
 export const SOCIAL_NETWORKS_URLS = {
-  facebook: 'facebook.todo',
-  instagram: 'instagram.todo',
+  facebook: 'https://www.facebook.com/VolyaAsso/',
+  instagram: 'https://instagram.com/volya_asso',
   linkedin: 'linkedin.todo',
   tiktok: 'tiktok.todo',
   youtube: 'youtube.todo'
