@@ -224,7 +224,8 @@ const Contact = (): ReactElement => {
               variant="primary"
               style={{ color: 'white' }}
               type="submit"
-              disabled={formik.isSubmitting}>
+              disabled={formik.isSubmitting}
+            >
               {formik.isSubmitting ? 'Envoi en cours...' : 'Envoyer'}
             </Button>
           </Form>

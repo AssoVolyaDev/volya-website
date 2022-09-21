@@ -1,10 +1,16 @@
 import { ReactElement } from 'react';
 import styled from 'styled-components';
 import useLocale from '../../../hooks/useLocale';
+import { useMediaQuery } from 'react-responsive';
 
 import * as Types from '../../../types';
+import * as Constants from '../../../constants';
 
 type TeamMemberPosition = 'left' | 'right';
+
+const WINDOWS_SIZE = window.innerWidth;
+const DESKTOP_PERCENT_IMG_SIZE = 1 / 8;
+const MOBILE_PERCENT_IMG_SIZE = 1 / 4;
 
 interface TeamMemberInterface {
   teamMember: Types.TeamMember;
@@ -23,6 +29,8 @@ const TeamMemberContainer = styled.div<{ position: TeamMemberPosition }>`
 `;
 
 function TeamMember({ teamMember, position }: TeamMemberInterface): ReactElement {
+  const isMobile = useMediaQuery({ maxWidth: Constants.DEVICE_SIZES.mobileXL });
+
   const { shortLocale } = useLocale();
   const text = (
     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
@@ -33,8 +41,12 @@ function TeamMember({ teamMember, position }: TeamMemberInterface): ReactElement
   const image = (
     <img
       src={teamMember.imageProfileUrl}
-      width="100"
-      height="100"
+      width={
+        isMobile ? MOBILE_PERCENT_IMG_SIZE * WINDOWS_SIZE : DESKTOP_PERCENT_IMG_SIZE * WINDOWS_SIZE
+      }
+      height={
+        isMobile ? MOBILE_PERCENT_IMG_SIZE * WINDOWS_SIZE : DESKTOP_PERCENT_IMG_SIZE * WINDOWS_SIZE
+      }
       className="d-inline-block align-top"
       alt="Volya logo"
     />

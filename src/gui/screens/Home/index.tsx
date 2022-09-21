@@ -31,7 +31,8 @@ const Home = (): ReactElement => {
                 size="lg"
                 variant="primary"
                 style={{ color: 'white' }}
-                onClick={() => navigate('../association')}>
+                onClick={() => navigate('../association')}
+              >
                 {t('home.details')}
               </Button>
             </div>
@@ -60,7 +61,8 @@ const Home = (): ReactElement => {
                   bootstrapURLKeys={{ key: Constants.GOOGLE_MAPS_API_KEY }}
                   defaultCenter={Constants.GOOGLE_MAP_DEFAULT_PROPS.center}
                   defaultZoom={Constants.GOOGLE_MAP_DEFAULT_PROPS.zoom}
-                  yesIWantToUseGoogleMapApiInternals>
+                  yesIWantToUseGoogleMapApiInternals
+                >
                   <MapMarker
                     lat={Constants.COLLECTION_SITE_COORDINATES.lat}
                     lng={Constants.COLLECTION_SITE_COORDINATES.lng}
