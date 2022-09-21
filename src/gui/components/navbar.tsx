@@ -48,8 +48,7 @@ const VolyaNavbar = (): ReactElement => {
               />
             </Form> */}
             <Nav.Link href="/">{t('menu.home')}</Nav.Link>
-            {/* <Nav.Link href="/">{t('menu.home')}</Nav.Link> */}
-            {/* <Nav.Link href="/association">{t('menu.association')}</Nav.Link> */}
+            <Nav.Link href="/association">{t('menu.association')}</Nav.Link>
             {/* <Nav.Link href="/projets">{t('menu.projects')}</Nav.Link> */}
             {/* TODO : à remettre quand ça sera prêt */}
             {/* <Nav.Link href="/contact">{t('menu.contact')}</Nav.Link> */}
@@ -57,7 +56,7 @@ const VolyaNavbar = (): ReactElement => {
             <NavDropdown title={t(`menu.locale.${shortLocale}`)} id="navbarScrollingDropdown">
               <NavDropdown.Item onClick={() => changeLocale('fr')}>Français</NavDropdown.Item>
               <NavDropdown.Item onClick={() => changeLocale('uk')}>Yкраїнська</NavDropdown.Item>
-              <NavDropdown.Item onClick={() => changeLocale('en')}>English</NavDropdown.Item>
+              {/* <NavDropdown.Item onClick={() => changeLocale('en')}>English</NavDropdown.Item> */}
             </NavDropdown>
           </Nav>
         </Navbar.Collapse>
