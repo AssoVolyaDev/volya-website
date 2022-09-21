@@ -44,8 +44,8 @@
       "address": "3 rue du TODO 44000 NANTES"
     },
     "collectionSite": {
-      "hours": "Tous les jours du TODO au TODO",
-      "address": "18 rue du TODO 44000 NANTES"
+      "hours": "Contactez ukraine@volya-asso.fr pour la prise de RDV",
+      "address": "2 rue du Sénégal 44200 Nantes"
     }
   },
   "menu": {
@@ -65,7 +65,12 @@
   },
   "home": {
     "title": "Association Volya",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "description": {
+      "0": "L'association ",
+      "1": "VOLYA - ВОЛЯ ",
+      "2": "est née de la belle rencontre à Nantes d'une dizaine de bénévoles français et ukrainiens décidés à mener une action humanitaire depuis l'invasion de l'Ukraine par la Russie le 24 février 2022. Son objet, principalement humanitaire, est d'aider les déplacés ayant fui la guerre et accueillis en Loire-Atlantique ainsi que les Ukrainiens n'ayant pas pu ou voulu quitter leur pays en affrétant des camions en lien avec des ONG locales.",
+      "3": "Vive la liberté ! Слава волі !"
+    },
     "details": "Détails",
     "collectionSite": {
       "title": "Point de collecte",

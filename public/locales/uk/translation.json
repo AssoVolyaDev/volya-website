@@ -44,18 +44,18 @@
       "address": "3 rue du TODO 44000 NANTES"
     },
     "collectionSite": {
-      "hours": "Tous les jours du TODO au TODO",
-      "address": "18 rue du TODO 44000 NANTES"
+      "hours": "Зв'яжіться з нами через імейл ukraine@volya-asso.fr",
+      "address": "2 rue du Sénégal 44200 Nantes"
     }
   },
   "menu": {
-    "home": "додому",
-    "association": "Association",
-    "projects": "Projects",
-    "contact": "контакт",
-    "blog": "Blog",
+    "home": "Головна",
+    "association": "Асоціація",
+    "projects": "Проекти",
+    "contact": "Контакт",
+    "blog": "Блог",
     "search": {
-      "placeholder": "Recherche"
+      "placeholder": "Пошук"
     },
     "locale": {
       "fr": "Français",
@@ -65,27 +65,32 @@
   },
   "home": {
     "title": "Aсоціація воля",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-    "details": "Détails",
+    "description": {
+      "0": "Aсоціація ",
+      "1": "VOLYA - ВОЛЯ ",
+      "2": "народилася в результаті чудової зустрічі в Нанті дюжини французьких та українських волонтерів, які вирішили реалізувати гуманітарну акції після вторгнення Росії в Україну 24 лютого 2022 року. Її мета, переважно гуманітарна, полягає в тому, щоб допомогти вимушеним переміщеним особам через війну Росії в Україні і прийнятих в Луарі-Атлантичній. ВОЛЯ також допомагає українцям, які не змогли або відмовились залишити свою країну, відправляючи гуманітарну допомогу в Україну за співпраці з адміністративними центрами та громадськими організаціями та французькими перевізниками.",
+      "3": "Vive la liberté ! Слава волі !"
+    },
+    "details": "Деталі",
     "collectionSite": {
-      "title": "Point de collecte",
-      "hours": "Horaires",
-      "address": "Adresse"
+      "title": "Пункт збору",
+      "hours": "Години відкриття",
+      "address": "Адреса"
     },
     "actualites": {
-      "title": "Actualités"
+      "title": "Новини"
     },
     "blog": {
-      "title": "Derniers articles de blog"
+      "title": "Отсанні дописи Блогу"
     },
     "calendar": {
-      "title": "Calendrier Volya"
+      "title": "Календар Воля"
     }
   },
   "association": {
     "title": "Aсоціація воля",
     "role": {
-      "title": "Rôle",
+      "title": "Роль",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
     },
     "objective": {
@@ -100,7 +105,7 @@
       "title": "Наша команда"
     },
     "partners": {
-      "title": "Nos partenaires"
+      "title": "Наші партнери"
     },
     "donors": {
       "title": "Nos donateurs",
@@ -113,12 +118,12 @@
     }
   },
   "footer": {
-    "iNeedHelp": "I need help",
-    "iWantToHelp": "I want to help",
-    "contact": "контакт",
-    "phone": "Phone",
+    "iNeedHelp": "Мені потрібна допомога",
+    "iWantToHelp": "Я хочу допомогти",
+    "contact": "Контакт",
+    "phone": "Телефон",
     "email": "Email",
-    "address": "Address",
+    "address": "Адреса",
     "socialNetworks": {
       "instagram": "Instagram",
       "facebook": "Facebook",

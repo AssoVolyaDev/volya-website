@@ -9,7 +9,7 @@ import Footer from './gui/components/footer';
 import Navbar from './gui/components/navbar';
 import Loading from './gui/components/Loading';
 
-// import Home from './gui/screens/Home';
+import Home from './gui/screens/Home';
 import Association from './gui/screens/Association';
 // import Projects from './gui/screens/Projects';
 // import Contact from './gui/screens/Contact';
@@ -38,8 +38,8 @@ const App = (): ReactElement => {
               <Navbar />
 
               <Routes>
-                <Route path="/" element={<Association />} />
-                {/* <Route path="/" element={<Home />} /> */}
+                <Route path="/" element={<Home />} />
+                <Route path="/Association" element={<Association />} />
                 {/* <Route path="/association" element={<Association />} /> */}
                 {/* <Route path="/projets" element={<Projects />} /> */}
                 {/* TODO : à remettre quand ça sera prêt */}
