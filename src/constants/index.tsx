@@ -11,7 +11,7 @@ export const SOCIAL_NETWORKS_URLS = {
   facebook: 'https://www.facebook.com/VolyaAsso/',
   instagram: 'https://instagram.com/volya_asso',
   linkedin: 'linkedin.todo',
-  tiktok: 'tiktok.todo',
+  tiktok: 'https://www.tiktok.com/@volya_asso',
   youtube: 'youtube.todo'
 };
 

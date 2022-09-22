@@ -2,9 +2,9 @@ import React, { ReactElement } from 'react';
 import { useTranslation } from 'react-i18next';
 import {
   faFacebook,
-  faInstagram
+  faInstagram,
   // faLinkedinIn,
-  // faTiktok,
+  faTiktok
   // faYoutube
 } from '@fortawesome/free-brands-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -192,15 +192,15 @@ const Footer = (): ReactElement => {
                 </span> */}
 
                 {/* TODO : à faire */}
-                {/* <span>
+                <span>
                   <a href={Constants.SOCIAL_NETWORKS_URLS.tiktok} title="Tiktok">
                     <SocialIcon>
                       <FontAwesomeIcon icon={faTiktok} />
                     </SocialIcon>
                     <span className="sr-only">{t('footer.socialNetworks.tiktok')}</span>
                   </a>
-                  <span>{Constants.SOCIAL_NETWORKS_URLS.tiktok}</span>
-                </span> */}
+                  {/* <span>{Constants.SOCIAL_NETWORKS_URLS.tiktok}</span> */}
+                </span>
               </SocialIconContainer>
             </TopSubContainer>
           </ContentContainer>
