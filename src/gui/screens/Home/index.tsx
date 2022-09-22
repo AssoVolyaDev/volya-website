@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Button from 'react-bootstrap/Button';
 // import GoogleMapReact from 'google-map-react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 // import * as Constants from '../../../constants';
 import { ContentContainer } from '../../components/common';
@@ -15,9 +15,9 @@ import {
 // import CollectionSiteImg from '../../../assets/images/collection-site.png';
 // import MapMarker from '../../components/Marker';
 
-const SlavaText = styled.div`
-  color: ${({ theme }) => theme.redColor};
-`;
+// const SlavaText = styled.div`
+//   color: ${({ theme }) => theme.redColor};
+// `;
 
 const Home = (): ReactElement => {
   const navigate = useNavigate();
@@ -33,9 +33,9 @@ const Home = (): ReactElement => {
               <span>{t('home.description.0')}</span>
               <span style={{ fontWeight: 'bold' }}>{t('home.description.1')}</span>
               <span>{t('home.description.2')}</span>
-              <SlavaText style={{ fontWeight: 'bold' }}>
+              <div style={{ fontWeight: 'bold' }}>
                 <p>{t('home.description.3')}</p>
-              </SlavaText>
+              </div>
             </div>
             <div style={{ display: 'flex', justifyContent: 'center' }}>
               {/* TODO color: 'white' à mettre dans bootstrap.scss d'une manière ou d'une autre */}
