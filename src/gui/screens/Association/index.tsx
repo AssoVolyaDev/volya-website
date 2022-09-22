@@ -34,11 +34,52 @@ import TeamMember from './TeamMember';
 //   ${({ position }) => position === 'right' && 'margin-left: 500px;margin-right:30px'};
 // `;
 
+const DEFAULT_TEAM_MEMBERS: Types.DefaultTeamMember[] = [
+  {
+    gender: 'female',
+    ordre: 1
+  },
+  {
+    gender: 'female',
+    ordre: 2
+  },
+  {
+    gender: 'male',
+    ordre: 3
+  },
+  {
+    gender: 'male',
+    ordre: 4
+  },
+  {
+    gender: 'male',
+    ordre: 5
+  },
+  {
+    gender: 'female',
+    ordre: 6
+  },
+  {
+    gender: 'female',
+    ordre: 7
+  },
+  {
+    gender: 'male',
+    ordre: 8
+  },
+  {
+    gender: 'male',
+    ordre: 9
+  }
+];
+
 const Association = (): ReactElement => {
   const { t } = useTranslation();
 
   // TODO : à utiliser à la place de Constants.TEAM_MEMBERS
-  const [teamMembers, setTeamMembers] = useState<Types.TeamMember[]>([]);
+  const [teamMembers, setTeamMembers] = useState<Types.DefaultTeamMember[] | Types.TeamMember[]>(
+    DEFAULT_TEAM_MEMBERS
+  );
   useEffect(() => {
     TeamMemberFirestore.subscribeToTeamMembers(setTeamMembers);
   }, []);
@@ -95,26 +136,26 @@ const Association = (): ReactElement => {
           </ContentContainer>
         </ContentPageContainer> */}
 
-        {teamMembers !== undefined && teamMembers.length > 0 && (
-          <ContentPageContainer>
-            <ContentContainer>
-              <h2>{t('association.team.title')}</h2>
-              {teamMembers
-                .sort((teamMember: Types.TeamMember, otherTeamMember: Types.TeamMember) => {
+        <ContentPageContainer>
+          <ContentContainer>
+            <h2>{t('association.team.title')}</h2>
+            {teamMembers
+              .sort(
+                (teamMember: Types.CommonTeamMember, otherTeamMember: Types.CommonTeamMember) => {
                   return teamMember.ordre - otherTeamMember.ordre;
-                })
-                .map((teamMember, index) => {
-                  return (
-                    <TeamMember
-                      key={index}
-                      teamMember={teamMember}
-                      position={index % 2 === 0 ? 'left' : 'right'}
-                    />
-                  );
-                })}
-            </ContentContainer>
-          </ContentPageContainer>
-        )}
+                }
+              )
+              .map((teamMember, index) => {
+                return (
+                  <TeamMember
+                    key={index}
+                    teamMember={teamMember}
+                    position={index % 2 === 0 ? 'left' : 'right'}
+                  />
+                );
+              })}
+          </ContentContainer>
+        </ContentPageContainer>
 
         {Constants.PARTNERS !== undefined && Constants.PARTNERS.length > 0 && (
           <ContentPageContainer>
