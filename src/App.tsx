@@ -12,7 +12,7 @@ import Loading from './gui/components/Loading';
 import Home from './gui/screens/Home';
 import Association from './gui/screens/Association';
 // import Projects from './gui/screens/Projects';
-// import Contact from './gui/screens/Contact';
+import Contact from './gui/screens/Contact';
 // import Blog from './gui/screens/Blog';
 
 // import LegalNotices from './gui/screens/LegalNotices';
@@ -42,8 +42,7 @@ const App = (): ReactElement => {
                 <Route path="/Association" element={<Association />} />
                 {/* <Route path="/association" element={<Association />} /> */}
                 {/* <Route path="/projets" element={<Projects />} /> */}
-                {/* TODO : à remettre quand ça sera prêt */}
-                {/* <Route path="/contact" element={<Contact />} /> */}
+                <Route path="/contact" element={<Contact />} />
                 {/* <Route path="/blog" element={<Blog />} /> */}
 
                 {/* TODO : à remettre quand ça sera prêt */}
