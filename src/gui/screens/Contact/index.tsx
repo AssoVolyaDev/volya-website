@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
+import * as Constants from '../../../constants';
 // import * as FirebaseFunctions from '../../../firebase/functions';
 import { ContentContainer } from '../../components/common';
 import {
@@ -18,7 +19,13 @@ const ContactFormContentContainer = styled(ContentContainer)`
   min-height: 500px;
 `;
 
-export const VolunteerFormColumn = styled.div<{ disposal: 'left' | 'right' }>`
+export const FormColumnsContainer = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+`;
+
+export const FormColumn = styled.div<{ disposal: 'left' | 'right' }>`
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -118,6 +125,17 @@ const validate = (values: FormValues): ContactFormError => {
 const Contact = (): ReactElement => {
   const { t } = useTranslation();
 
+  const orSendMailComponent = (
+    <h4 style={{ marginTop: 25 }}>
+      {t('contact.sendMailMessage.1')}
+      <a
+        href={`mailto: ${t('global.contact.email')}`}
+        style={{ color: 'black', textDecoration: 'underline' }}>
+        {t('contact.sendMailMessage.2')}
+      </a>
+    </h4>
+  );
+
   const formik = useFormik({
     initialValues: {
       lastName: '',
@@ -169,18 +187,18 @@ const Contact = (): ReactElement => {
         <ContentPageContainer coloredBackground>
           <ContactFormContentContainer>
             <Form onSubmit={formik.handleSubmit}>
-              <h2 style={{ marginBottom: 50 }}>{t('contact.title')}</h2>
+              <h2 style={{ marginBottom: 50 }}>{t('contact.volunteer.title')}</h2>
 
-              <div style={{ display: 'flex', flex: 1, flexDirection: 'row' }}>
-                <VolunteerFormColumn disposal="left">
+              <FormColumnsContainer>
+                <FormColumn disposal="left">
                   <h3 style={{ marginBottom: 50 }}>
-                    {t('contact.subtitle.1')}
-                    <span style={{ fontWeight: 'bold' }}>{t('contact.subtitle.2')}</span>
-                    {t('contact.subtitle.3')}
+                    {t('contact.volunteer.subtitle.1')}
+                    <span style={{ fontWeight: 'bold' }}>{t('contact.volunteer.subtitle.2')}</span>
+                    {t('contact.volunteer.subtitle.3')}
                   </h3>
 
                   <Form.Group className="mb-3" controlId="lastName">
-                    <Form.Label>{t('contact.form.lastName')} *</Form.Label>
+                    <Form.Label>{t('contact.volunteer.form.lastName')} *</Form.Label>
                     <Form.Control {...formik.getFieldProps('lastName')} />
                     {formik.touched.lastName === true && formik.errors.lastName !== undefined && (
                       <ErrorMessage className="bg-white text-danger">
@@ -190,7 +208,7 @@ const Contact = (): ReactElement => {
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="firstName">
-                    <Form.Label>{t('contact.form.firstName')} *</Form.Label>
+                    <Form.Label>{t('contact.volunteer.form.firstName')} *</Form.Label>
                     <Form.Control {...formik.getFieldProps('firstName')} />
                     {formik.touched.firstName === true && formik.errors.firstName !== undefined && (
                       <ErrorMessage className="bg-white text-danger">
@@ -200,7 +218,7 @@ const Contact = (): ReactElement => {
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="email">
-                    <Form.Label>{t('contact.form.email')} *</Form.Label>
+                    <Form.Label>{t('contact.volunteer.form.email')} *</Form.Label>
                     <Form.Control type="email" {...formik.getFieldProps('email')} />
                     {formik.touched.email === true && formik.errors.email !== undefined && (
                       <ErrorMessage className="bg-white text-danger">
@@ -210,7 +228,7 @@ const Contact = (): ReactElement => {
                   </Form.Group>
 
                   <Form.Group className="mb-3" controlId="phone">
-                    <Form.Label>{t('contact.form.phone')}</Form.Label>
+                    <Form.Label>{t('contact.volunteer.form.phone')}</Form.Label>
                     <Form.Control {...formik.getFieldProps('phone')} />
                     {formik.touched.phone === true && formik.errors.phone !== undefined && (
                       <ErrorMessage className="bg-white text-danger">
@@ -218,28 +236,28 @@ const Contact = (): ReactElement => {
                       </ErrorMessage>
                     )}
                   </Form.Group>
-                </VolunteerFormColumn>
+                </FormColumn>
                 {/* TODO : sur mobile, plutôt le placer en haut ? */}
-                <VolunteerFormColumn disposal="right" style={{ alignItems: 'flex-end' }}>
+                <FormColumn disposal="right" style={{ alignItems: 'flex-end' }}>
                   <VolunteerFormDescription>
-                    <div>{t('contact.description.title')}</div>
+                    <h4>{t('contact.volunteer.description.title')}</h4>
                     <ul>
-                      <li>{t('contact.description.list.1')}</li>
-                      <li>{t('contact.description.list.2')}</li>
-                      <li>{t('contact.description.list.3')}</li>
+                      <li>{t('contact.volunteer.description.list.1')}</li>
+                      <li>{t('contact.volunteer.description.list.2')}</li>
+                      <li>{t('contact.volunteer.description.list.3')}</li>
                     </ul>
                   </VolunteerFormDescription>
-                </VolunteerFormColumn>
-              </div>
+                </FormColumn>
+              </FormColumnsContainer>
 
               <Form.Group className="mb-3" controlId="tasks">
-                <Form.Label>{t('contact.form.tasks.title')}</Form.Label>
+                <Form.Label>{t('contact.volunteer.form.tasks.title')}</Form.Label>
                 {TASKS.map((task) => {
                   return (
                     <Form.Group className="mb-3" controlId={task} key={task}>
                       <Form.Check
                         {...formik.getFieldProps({ task })}
-                        label={t(`contact.form.tasks.list.${task}`)}
+                        label={t(`contact.volunteer.form.tasks.list.${task}`)}
                       />
                     </Form.Group>
                   );
@@ -252,7 +270,7 @@ const Contact = (): ReactElement => {
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="comment">
-                <Form.Label>{t('contact.form.comment')}</Form.Label>
+                <Form.Label>{t('contact.volunteer.form.comment')}</Form.Label>
                 <Form.Control as="textarea" {...formik.getFieldProps('comment')} rows={5} />
                 {formik.touched.comment === true && formik.errors.comment !== undefined && (
                   <ErrorMessage className="bg-white text-danger">
@@ -264,19 +282,64 @@ const Contact = (): ReactElement => {
               <div className="d-grid gap-2">
                 <Button variant="secondary" type="submit" disabled={formik.isSubmitting} size="lg">
                   {formik.isSubmitting
-                    ? t('contact.form.submit.loading')
-                    : t('contact.form.submit.default')}
+                    ? t('contact.volunteer.form.submit.loading')
+                    : t('contact.volunteer.form.submit.default')}
                 </Button>
               </div>
             </Form>
-            <h3 style={{ marginTop: 50 }}>
-              {t('contact.footerMessage.1')}
-              <a
-                href={`mailto: ${t('contact.footerMessage.2')}`}
-                style={{ color: 'black', textDecoration: 'underline' }}>
-                {t('contact.footerMessage.2')}
-              </a>
-            </h3>
+            {orSendMailComponent}
+
+            <FormColumnsContainer style={{ marginTop: 50 }}>
+              <FormColumn disposal="left">
+                <h3 style={{ marginBottom: 50 }}>
+                  {t('contact.member.subtitle.1')}
+                  <span style={{ fontWeight: 'bold' }}>{t('contact.member.subtitle.2')}</span>
+                  {t('contact.member.subtitle.3')}
+                </h3>
+
+                <h4>
+                  <span style={{ fontWeight: 'bold' }}>
+                    {t('contact.member.becomeMemberMessage.1')}
+                  </span>
+                  <a
+                    href={`${Constants.HELLO_ASSO_URLS.becomeMember}`}
+                    style={{ color: 'black', textDecoration: 'underline' }}>
+                    {t('contact.member.becomeMemberMessage.2')}
+                  </a>
+                  {t('contact.member.becomeMemberMessage.3')}
+                </h4>
+                {orSendMailComponent}
+              </FormColumn>
+              <FormColumn disposal="right">
+                <VolunteerFormDescription>
+                  <h4>{t('contact.member.description.title')}</h4>
+                  <div>
+                    <span style={{ fontWeight: 'bold' }}>
+                      {t('contact.member.description.helloAsso.1')}
+                    </span>
+                    <a
+                      href={`${Constants.HELLO_ASSO_URLS.donate}`}
+                      style={{ color: 'black', textDecoration: 'underline' }}>
+                      {t('contact.member.description.helloAsso.2')}
+                    </a>
+                    {t('contact.member.description.helloAsso.3')}
+                  </div>
+                  <div style={{ marginTop: 10, marginBottom: 10 }}>
+                    {t('contact.member.description.sendMailToGetRIBMessage.1')}
+                  </div>
+                  <div>
+                    {t('contact.member.description.sendMailToGetRIBMessage.2')}
+                    <a
+                      href={`mailto: ${t('global.contact.email')}`}
+                      style={{ color: 'black', textDecoration: 'underline' }}>
+                      {t('contact.member.description.sendMailToGetRIBMessage.3')}
+                    </a>
+                    {t('contact.member.description.sendMailToGetRIBMessage.4')}
+                  </div>
+                  {/* TODO - Apportez-nous vos dons : */}
+                </VolunteerFormDescription>
+              </FormColumn>
+            </FormColumnsContainer>
           </ContactFormContentContainer>
         </ContentPageContainer>
       </InnerPageContainer>

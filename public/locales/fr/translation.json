@@ -118,44 +118,72 @@
     }
   },
   "contact": {
-    "title": "Vous voulez soutenir l'Ukraine ?",
-    "subtitle": {
-      "1": "Rejoignez-nous !\n\nRemplir le formulaire pour devenir ",
-      "2": "bénévole",
-      "3": " :"
-    },
-    "description": {
-      "title": "En quoi consiste le bénévolat à Volya ?",
-      "list": {
-        "1": "Je participe au collecte de dons pour Ukraine et/ou pour le centre de réfugies à Nantes ;",
-        "2": "Je tri le dons pour l'Ukraine et/ou pour le centre de réfugies à Nantes ;",
-        "3": "J'aide dans les activités de communication - courriel, messageries des réseaux sociaux ;"
-      }
-    },
-    "form": {
-      "lastName": "Nom",
-      "firstName": "Prénom",
-      "email": "Email",
-      "phone": "Téléphone",
-      "tasks": {
-        "title": "Je veux aider dans :",
+    "volunteer": {
+      "title": "Vous voulez soutenir l'Ukraine ?",
+      "subtitle": {
+        "1": "Rejoignez-nous !\n\nRemplir le formulaire pour devenir ",
+        "2": "bénévole",
+        "3": " :"
+      },
+      "description": {
+        "title": "En quoi consiste le bénévolat à Volya ?",
         "list": {
-          "donationCollection": "collecte de dons",
-          "donationSorting": "tri de dons",
-          "administrativeTasks": "tâches administratives",
-          "socialNetworks": "réseaux sociaux",
-          "fle": "français langue étrangère",
-          "nationalsSupport": "accompagnement ressortissants",
-          "translation": "traduction"
+          "1": "Je participe au collecte de dons pour Ukraine et/ou pour le centre de réfugies à Nantes ;",
+          "2": "Je tri le dons pour l'Ukraine et/ou pour le centre de réfugies à Nantes ;",
+          "3": "J'aide dans les activités de communication - courriel, messageries des réseaux sociaux ;"
         }
       },
-      "comment": "Commentaire",
-      "submit": {
-        "default": "Je deviens bénévole !",
-        "loading": "Envoi en cours..."
+      "form": {
+        "lastName": "Nom",
+        "firstName": "Prénom",
+        "email": "Email",
+        "phone": "Téléphone",
+        "tasks": {
+          "title": "Je veux aider dans :",
+          "list": {
+            "donationCollection": "collecte de dons",
+            "donationSorting": "tri de dons",
+            "administrativeTasks": "tâches administratives",
+            "socialNetworks": "réseaux sociaux",
+            "fle": "français langue étrangère",
+            "nationalsSupport": "accompagnement ressortissants",
+            "translation": "traduction"
+          }
+        },
+        "comment": "Commentaire",
+        "submit": {
+          "default": "Je deviens bénévole !",
+          "loading": "Envoi en cours..."
+        }
       }
     },
-    "footerMessage": {
+    "member": {
+      "subtitle": {
+        "1": "Devenez ",
+        "2": "adhérent",
+        "3": " !"
+      },
+      "description": {
+        "title": "Faire un don financier !",
+        "helloAsso": {
+          "1": "Via ",
+          "2": "HelloAsso",
+          "3": "."
+        },
+        "sendMailToGetRIBMessage": {
+          "1": "OU",
+          "2": "envoyer un mail à ",
+          "3": "ukraine@volya-asso.fr",
+          "4": " pour obtenir le RIB."
+        }
+      },
+      "becomeMemberMessage": {
+        "1": "Faire la demande via ",
+        "2": "HelloAsso",
+        "3": "."
+      }
+    },
+    "sendMailMessage": {
       "1": "OU\n\nenvoyer un mail à ",
       "2": "ukraine@volya-asso.fr"
     }
