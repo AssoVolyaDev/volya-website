@@ -12,7 +12,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     * {
-    box-sizing: border-box;
+      box-sizing: border-box;
     }
 
     body {
@@ -34,5 +34,9 @@ export const GlobalStyles = createGlobalStyle`
     textarea, input, button, select { 
         font-family: inherit;
         font-size: inherit;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      white-space: pre-line;
     }
 `;
