@@ -46,6 +46,9 @@
     "collectionSite": {
       "hours": "Зв'яжіться з нами через імейл ukraine@volya-asso.fr",
       "address": "2 rue du Sénégal 44200 Nantes"
+    },
+    "form": {
+      "mandatory": "TODO"
     }
   },
   "menu": {

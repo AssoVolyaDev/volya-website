@@ -16,7 +16,8 @@ import Contact from './gui/screens/Contact';
 // import Blog from './gui/screens/Blog';
 
 // import LegalNotices from './gui/screens/LegalNotices';
-// import CGU from './gui/screens/CGU';
+import CGU from './gui/screens/CGU';
+import PrivacyPolicy from './gui/screens/PrivacyPolicy';
 import { GlobalStyles } from './style/global';
 import { theme } from './style/theme';
 
@@ -46,9 +47,9 @@ const App = (): ReactElement => {
                 {/* <Route path="/blog" element={<Blog />} /> */}
 
                 {/* TODO : à remettre quand ça sera prêt */}
-                {/* <Route path="/mentions-legales" element={<LegalNotices />} />
-                <Route path="/cgu" element={<CGU />} /> */}
-                {/* TODO obligatoire <Route path="/confidentialite" element={<PrivacyPolicy />} /> */}
+                {/* <Route path="/mentions-legales" element={<LegalNotices />} /> */}
+                <Route path="/cgu" element={<CGU />} />
+                <Route path="/confidentialite" element={<PrivacyPolicy />} />
                 {/* TODO obligatoire (redirection à partir de PrivacyPolicy) <Route path="/cookies" element={<Cookies />} /> */}
               </Routes>
               <ToastContainer />

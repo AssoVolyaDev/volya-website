@@ -15,6 +15,15 @@ export const SOCIAL_NETWORKS_URLS = {
   youtube: 'youtube.todo'
 };
 
+export const HELLO_ASSO_URLS = {
+  home: 'https://www.helloasso.com/associations/association-franco-ukrainienne-volya',
+  // ATTENTION à changer ça tous les ans
+  becomeMember:
+    'https://www.helloasso.com/associations/association-franco-ukrainienne-volya/adhesions/adhesion-2022',
+  donate:
+    'https://www.helloasso.com/associations/association-franco-ukrainienne-volya/formulaires/1'
+};
+
 // TODO : à déplacer dans une variable d'environnement
 export const GOOGLE_MAPS_API_KEY = 'AIzaSyA14exFuZnTsG1FD - FEOwzeviR2kl - CU1g';
 
