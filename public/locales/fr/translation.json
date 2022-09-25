@@ -46,6 +46,9 @@
     "collectionSite": {
       "hours": "Contactez ukraine@volya-asso.fr pour la prise de RDV",
       "address": "2 rue du Sénégal 44200 Nantes"
+    },
+    "form": {
+      "mandatory": "Champ requis"
     }
   },
   "menu": {
@@ -119,14 +122,14 @@
   },
   "contact": {
     "volunteer": {
-      "title": "Vous voulez soutenir l'Ukraine ?",
+      "title": "Vous voulez soutenir l'Ukraine ?",
       "subtitle": {
         "1": "Rejoignez-nous !\n\nRemplir le formulaire pour devenir ",
         "2": "bénévole",
         "3": " :"
       },
       "description": {
-        "title": "En quoi consiste le bénévolat à Volya ?",
+        "title": "En quoi consiste le bénévolat à Volya ?",
         "list": {
           "1": "Je participe au collecte de dons pour Ukraine et/ou pour le centre de réfugies à Nantes ;",
           "2": "Je tri le dons pour l'Ukraine et/ou pour le centre de réfugies à Nantes ;",
@@ -138,6 +141,7 @@
         "firstName": "Prénom",
         "email": "Email",
         "phone": "Téléphone",
+        "city": "Ville",
         "tasks": {
           "title": "Je veux aider dans :",
           "list": {
@@ -151,9 +155,20 @@
           }
         },
         "comment": "Commentaire",
+        "consent": {
+          "1": "J'accepte les ",
+          "2": "Conditions d'utilisation",
+          "3": " et les ",
+          "4": "Règles de confidentialité",
+          "5": "."
+        },
         "submit": {
           "default": "Je deviens bénévole !",
           "loading": "Envoi en cours..."
+        },
+        "errors": {
+          "mandatoryTask": "Merci de sélectionner au moins une tâche.",
+          "mandatoryConsent": "Merci d'accepter les Conditions d'utilisation et les Règles de confidentialités."
         }
       }
     },
@@ -161,10 +176,10 @@
       "subtitle": {
         "1": "Devenez ",
         "2": "adhérent",
-        "3": " !"
+        "3": " !"
       },
       "description": {
-        "title": "Faire un don financier !",
+        "title": "Faire un don financier !",
         "helloAsso": {
           "1": "Via ",
           "2": "HelloAsso",

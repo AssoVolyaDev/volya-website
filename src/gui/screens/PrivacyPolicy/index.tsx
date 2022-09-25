@@ -9,7 +9,7 @@ import {
   PageContainer
 } from '../../components/pageContainer';
 
-const CGUContentContainer = styled(ContentContainer)`
+const PrivacyPolicyContentContainer = styled(ContentContainer)`
   text-align: justify;
 
   p {
@@ -18,19 +18,19 @@ const CGUContentContainer = styled(ContentContainer)`
   }
 `;
 
-const CGU = (): ReactElement => {
+const PrivacyPolicy = (): ReactElement => {
   return (
     <PageContainer>
       <InnerPageContainer>
         <ContentPageContainer coloredBackground>
           <ContentContainer>
-            <h1>Conditions générales d&apos;utilisation</h1>
+            <h1>Règles de confidentialité</h1>
           </ContentContainer>
         </ContentPageContainer>
         <ContentPageContainer>
-          <CGUContentContainer>
+          <PrivacyPolicyContentContainer>
             <p>En cours de rédaction...</p>
-          </CGUContentContainer>
+          </PrivacyPolicyContentContainer>
           <Marginer direction="vertical" margin="2em" />
         </ContentPageContainer>
       </InnerPageContainer>
@@ -38,4 +38,4 @@ const CGU = (): ReactElement => {
   );
 };
 
-export default CGU;
+export default PrivacyPolicy;

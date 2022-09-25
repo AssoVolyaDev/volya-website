@@ -7,7 +7,7 @@ import Form from 'react-bootstrap/Form';
 
 import * as Constants from '../../../constants';
 // import * as FirebaseFunctions from '../../../firebase/functions';
-import { ContentContainer } from '../../components/common';
+import { ContentContainer, StyledALink, StyledLink } from '../../components/common';
 import {
   InnerPageContainer,
   PageContainer,
@@ -65,8 +65,10 @@ interface ContactFormError {
   firstName?: string;
   email?: string;
   phone?: string;
+  city?: string;
   tasks?: string;
   comment?: string;
+  consent?: string;
 }
 
 interface FormValues {
@@ -74,6 +76,7 @@ interface FormValues {
   firstName?: string;
   email?: string;
   phone?: string;
+  city?: string;
   // Champ virtuel pour la gestion de l'erreur sur les tâches
   tasks?: string[];
   donationCollection?: boolean;
@@ -84,6 +87,7 @@ interface FormValues {
   nationalsSupport?: boolean;
   translation?: boolean;
   comment?: string;
+  consent?: boolean;
 }
 
 const getTasks = (values: FormValues): string[] => {
@@ -97,44 +101,47 @@ const getTasks = (values: FormValues): string[] => {
   return tasks;
 };
 
-const validate = (values: FormValues): ContactFormError => {
-  const errors: ContactFormError = {};
-  if (values.lastName === undefined || values.lastName === null || values.lastName.length === 0) {
-    errors.lastName = 'Champ requis';
-  }
-  if (
-    values.firstName === undefined ||
-    values.firstName === null ||
-    values.firstName.length === 0
-  ) {
-    errors.firstName = 'Champ requis';
-  }
-  if (values.email === undefined || values.email === null || values.email.length === 0) {
-    errors.email = 'Champ requis';
-  }
-
-  const tasks = getTasks(values);
-  if (tasks.length === 0) {
-    errors.tasks = 'Merci de sélectionner au moins une tâche.';
-  }
-
-  // console.log('errors', errors);
-  return errors;
-};
-
 const Contact = (): ReactElement => {
   const { t } = useTranslation();
 
   const orSendMailComponent = (
     <h4 style={{ marginTop: 25 }}>
       {t('contact.sendMailMessage.1')}
-      <a
-        href={`mailto: ${t('global.contact.email')}`}
-        style={{ color: 'black', textDecoration: 'underline' }}>
+      <StyledALink href={`mailto: ${t('global.contact.email')}`}>
         {t('contact.sendMailMessage.2')}
-      </a>
+      </StyledALink>
     </h4>
   );
+
+  // TODO : traduire les messages
+  const validate = (values: FormValues): ContactFormError => {
+    const errors: ContactFormError = {};
+    if (values.lastName === undefined || values.lastName === null || values.lastName.length === 0) {
+      errors.lastName = t('global.form.mandatory');
+    }
+    if (
+      values.firstName === undefined ||
+      values.firstName === null ||
+      values.firstName.length === 0
+    ) {
+      errors.firstName = t('global.form.mandatory');
+    }
+    if (values.email === undefined || values.email === null || values.email.length === 0) {
+      errors.email = t('global.form.mandatory');
+    }
+
+    const tasks = getTasks(values);
+    if (tasks.length === 0) {
+      errors.tasks = t('contact.volunteer.form.errors.mandatoryTask');
+    }
+
+    if (values.consent !== true) {
+      errors.consent = t('contact.volunteer.form.errors.mandatoryConsent');
+    }
+
+    // console.log('errors', errors);
+    return errors;
+  };
 
   const formik = useFormik({
     initialValues: {
@@ -142,6 +149,7 @@ const Contact = (): ReactElement => {
       firstName: '',
       email: '',
       phone: '',
+      city: '',
       donationCollection: false,
       donationSorting: false,
       administrativeTasks: false,
@@ -149,7 +157,8 @@ const Contact = (): ReactElement => {
       fle: false,
       nationalsSupport: false,
       translation: false,
-      comment: ''
+      comment: '',
+      consent: false
     },
     validate,
     onSubmit: (values, { setSubmitting }) => {
@@ -168,8 +177,10 @@ const Contact = (): ReactElement => {
       //   values.firstName,
       //   values.email,
       //   values.phone,
+      //   values.city,
       //   getTasks(values),
       //   values.comment,
+      //   new Date()
       //   () => {
       //     NotificationUtils.handleMessage(
       //       `Votre message a été envoyé. Nous vous répondrons dès que possible.`
@@ -187,6 +198,7 @@ const Contact = (): ReactElement => {
         <ContentPageContainer coloredBackground>
           <ContactFormContentContainer>
             <Form onSubmit={formik.handleSubmit}>
+              {/* Formulaire pour les bénévoles */}
               <h2 style={{ marginBottom: 50 }}>{t('contact.volunteer.title')}</h2>
 
               <FormColumnsContainer>
@@ -236,6 +248,16 @@ const Contact = (): ReactElement => {
                       </ErrorMessage>
                     )}
                   </Form.Group>
+
+                  <Form.Group className="mb-3" controlId="city">
+                    <Form.Label>{t('contact.volunteer.form.city')}</Form.Label>
+                    <Form.Control {...formik.getFieldProps('city')} />
+                    {formik.touched.city === true && formik.errors.city !== undefined && (
+                      <ErrorMessage className="bg-white text-danger">
+                        {formik.errors.city}
+                      </ErrorMessage>
+                    )}
+                  </Form.Group>
                 </FormColumn>
                 {/* TODO : sur mobile, plutôt le placer en haut ? */}
                 <FormColumn disposal="right" style={{ alignItems: 'flex-end' }}>
@@ -279,6 +301,32 @@ const Contact = (): ReactElement => {
                 )}
               </Form.Group>
 
+              <Form.Group className="mb-3 mt-5" controlId="consent">
+                <Form.Group className="mb-3" controlId="consent">
+                  <Form.Check
+                    {...formik.getFieldProps('consent')}
+                    label={
+                      <div>
+                        {t('contact.volunteer.form.consent.1')}
+                        <StyledLink to="/cgu">{t('contact.volunteer.form.consent.2')}</StyledLink>
+                        {t('contact.volunteer.form.consent.3')}
+                        <StyledLink to="/confidentialite">
+                          {t('contact.volunteer.form.consent.4')}
+                        </StyledLink>
+                        {t('contact.volunteer.form.consent.5')}
+                      </div>
+                    }
+                  />
+                </Form.Group>
+                {formik.touched.consent === true && formik.errors.consent !== undefined && (
+                  <ErrorMessage className="bg-white text-danger">
+                    {formik.errors.consent}
+                  </ErrorMessage>
+                )}
+              </Form.Group>
+
+              {/* TODO : ajouter les disponibilités */}
+
               <div className="d-grid gap-2">
                 <Button variant="secondary" type="submit" disabled={formik.isSubmitting} size="lg">
                   {formik.isSubmitting
@@ -289,6 +337,7 @@ const Contact = (): ReactElement => {
             </Form>
             {orSendMailComponent}
 
+            {/* Information sur comment devenir adhérent ou faire un don */}
             <FormColumnsContainer style={{ marginTop: 50 }}>
               <FormColumn disposal="left">
                 <h3 style={{ marginBottom: 50 }}>
@@ -301,11 +350,9 @@ const Contact = (): ReactElement => {
                   <span style={{ fontWeight: 'bold' }}>
                     {t('contact.member.becomeMemberMessage.1')}
                   </span>
-                  <a
-                    href={`${Constants.HELLO_ASSO_URLS.becomeMember}`}
-                    style={{ color: 'black', textDecoration: 'underline' }}>
+                  <StyledALink href={`${Constants.HELLO_ASSO_URLS.becomeMember}`}>
                     {t('contact.member.becomeMemberMessage.2')}
-                  </a>
+                  </StyledALink>
                   {t('contact.member.becomeMemberMessage.3')}
                 </h4>
                 {orSendMailComponent}
@@ -317,11 +364,9 @@ const Contact = (): ReactElement => {
                     <span style={{ fontWeight: 'bold' }}>
                       {t('contact.member.description.helloAsso.1')}
                     </span>
-                    <a
-                      href={`${Constants.HELLO_ASSO_URLS.donate}`}
-                      style={{ color: 'black', textDecoration: 'underline' }}>
+                    <StyledALink href={`${Constants.HELLO_ASSO_URLS.donate}`}>
                       {t('contact.member.description.helloAsso.2')}
-                    </a>
+                    </StyledALink>
                     {t('contact.member.description.helloAsso.3')}
                   </div>
                   <div style={{ marginTop: 10, marginBottom: 10 }}>
@@ -329,11 +374,9 @@ const Contact = (): ReactElement => {
                   </div>
                   <div>
                     {t('contact.member.description.sendMailToGetRIBMessage.2')}
-                    <a
-                      href={`mailto: ${t('global.contact.email')}`}
-                      style={{ color: 'black', textDecoration: 'underline' }}>
+                    <StyledALink href={`mailto: ${t('global.contact.email')}`}>
                       {t('contact.member.description.sendMailToGetRIBMessage.3')}
-                    </a>
+                    </StyledALink>
                     {t('contact.member.description.sendMailToGetRIBMessage.4')}
                   </div>
                   {/* TODO - Apportez-nous vos dons : */}
