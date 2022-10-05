@@ -15,7 +15,7 @@ import Association from './gui/screens/Association';
 import Contact from './gui/screens/Contact';
 // import Blog from './gui/screens/Blog';
 
-// import LegalNotices from './gui/screens/LegalNotices';
+import LegalNotices from './gui/screens/LegalNotices';
 import CGU from './gui/screens/CGU';
 import PrivacyPolicy from './gui/screens/PrivacyPolicy';
 import { GlobalStyles } from './style/global';
@@ -47,7 +47,7 @@ const App = (): ReactElement => {
                 {/* <Route path="/blog" element={<Blog />} /> */}
 
                 {/* TODO : à remettre quand ça sera prêt */}
-                {/* <Route path="/mentions-legales" element={<LegalNotices />} /> */}
+                <Route path="/mentions-legales" element={<LegalNotices />} />
                 <Route path="/cgu" element={<CGU />} />
                 <Route path="/confidentialite" element={<PrivacyPolicy />} />
                 {/* TODO obligatoire (redirection à partir de PrivacyPolicy) <Route path="/cookies" element={<Cookies />} /> */}
