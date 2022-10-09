@@ -16,11 +16,6 @@ const LegalNoticesContentContainer = styled(ContentContainer)`
     margin-top: 1em;
     margin-bottom: 1em;
   }
-
-  p {
-    /* margin-top: 0.5em;
-    margin-bottom: 0.5em; */
-  }
 `;
 
 const LegalNotices = (): ReactElement => {
@@ -34,12 +29,12 @@ const LegalNotices = (): ReactElement => {
         </ContentPageContainer>
         <ContentPageContainer>
           <LegalNoticesContentContainer>
-            <p style={{ marginBottom: 25, textAlign: 'center' }}>En vigueur au 05/10/2022</p>
+            <p style={{ marginBottom: 25, textAlign: 'center' }}>En vigueur au 11/10/2022</p>
             <p>
               Conform&eacute;ment aux dispositions des Articles 6-III et 19 de la Loi n&deg;2004-575
               du 21 juin 2004 pour la Confiance dans l&rsquo;&eacute;conomie num&eacute;rique, dite
               L.C.E.N., il est port&eacute; &agrave; la connaissance des utilisateurs et visiteurs,
-              ci-apr&egrave;s l&quot;&quot;<strong>Utilisateur</strong>&quot;, du site
+              ci-apr&egrave;s l&quot;&quot;<strong>Utilisateur</strong>&quot;, du site{' '}
               <StyledALink href={`https://volya-asso.fr/`}>https://volya-asso.fr/</StyledALink>,
               ci-apr&egrave;s le &quot;<strong>Site</strong>&quot;, les pr&eacute;sentes mentions
               l&eacute;gales.
@@ -53,7 +48,7 @@ const LegalNotices = (): ReactElement => {
               Mentions l&eacute;gales &raquo;.
             </p>
 
-            <h2>ARTICLE 1 - l&apos;EDITEUR</h2>
+            <h2>ARTICLE 1 - Editeur</h2>
             <p>
               Le Site est &eacute;dit&eacute; par ASSOCIATION FRANCO-UKRAINIENNE VOLYA Association
               loi de 1901, immatricul&eacute;e au R&eacute;pertoire National des Associations de
@@ -73,7 +68,7 @@ const LegalNotices = (): ReactElement => {
               ci-apr&egrave;s l&apos;&quot;<strong>Editeur</strong>&quot;.
             </p>
 
-            <h2>ARTICLE 2 - l&apos;HEBERGEUR</h2>
+            <h2>ARTICLE 2 - Hébergeur</h2>
             <p>
               Le Site est h&eacute;berg&eacute; par la soci&eacute;t&eacute; Netlify, dont le
               si&egrave;ge social est situ&eacute; au 2325 3rd Street, Suite 215 94107 San
@@ -84,7 +79,7 @@ const LegalNotices = (): ReactElement => {
               .
             </p>
 
-            <h2>ARTICLE 3 - ACCES AU SITE</h2>
+            <h2>ARTICLE 3 - Accès au site</h2>
             <p>
               Le Site est accessible en tout endroit, 7j/7, 24h/24 sauf cas de force majeure,
               interruption programm&eacute;e ou non et pouvant d&eacute;coulant d&rsquo;une
@@ -95,7 +90,7 @@ const LegalNotices = (): ReactElement => {
               &ecirc;tre tenu responsable.
             </p>
 
-            <h2>ARTICLE 4 - COLLECTE DES DONNEES</h2>
+            <h2>ARTICLE 4 - Collecte des données</h2>
             <p>
               Le Site assure &agrave; l&apos;Utilisateur une collecte et un traitement
               d&apos;informations personnelles dans le respect de la vie priv&eacute;e
