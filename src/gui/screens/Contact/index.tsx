@@ -267,6 +267,8 @@ const Contact = (): ReactElement => {
                       <li>{t('contact.volunteer.description.list.1')}</li>
                       <li>{t('contact.volunteer.description.list.2')}</li>
                       <li>{t('contact.volunteer.description.list.3')}</li>
+                      <li>{t('contact.volunteer.description.list.4')}</li>
+                      <li>{t('contact.volunteer.description.list.5')}</li>
                     </ul>
                   </VolunteerFormDescription>
                 </FormColumn>
