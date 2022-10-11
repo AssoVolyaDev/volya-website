@@ -62,8 +62,8 @@
     },
     "locale": {
       "fr": "Français",
-      "en": "Anglais",
-      "uk": "Ukrainien"
+      "en": "English",
+      "uk": "Yкраїнська"
     }
   },
   "home": {
@@ -72,7 +72,7 @@
       "0": "L'association ",
       "1": "VOLYA - ВОЛЯ ",
       "2": "est née de la belle rencontre à Nantes d'une dizaine de bénévoles français et ukrainiens décidés à mener une action humanitaire depuis l'invasion de l'Ukraine par la Russie le 24 février 2022. Son objet, principalement humanitaire, est d'aider les déplacés ayant fui la guerre et accueillis en Loire-Atlantique ainsi que les Ukrainiens n'ayant pas pu ou voulu quitter leur pays en affrétant des camions en lien avec des ONG locales.",
-      "3": "Vive la liberté ! Слава волі !"
+      "3": "Vive la liberté ! Слава Україні !"
     },
     "details": "Détails",
     "collectionSite": {
@@ -131,9 +131,11 @@
       "description": {
         "title": "En quoi consiste le bénévolat à Volya ?",
         "list": {
-          "1": "Je participe au collecte de dons pour Ukraine et/ou pour le centre de réfugies à Nantes ;",
-          "2": "Je tri le dons pour l'Ukraine et/ou pour le centre de réfugies à Nantes ;",
-          "3": "J'aide dans les activités de communication - courriel, messageries des réseaux sociaux ;"
+          "1": "Je participe au collecte de dons pour Ukraine et/ou pour les ressortissants fuyant la guerre en Ukraine à Nantes ;",
+          "2": "Je tri le dons pour l'Ukraine et/ou pour les ressortissants fuyant la guerre en Ukraine ;",
+          "3": "J'aide dans les activités administartives et de communication - courriel, messageries des réseaux sociaux ;",
+          "4": "J'organise et participe aux sorties avec les ressortissants fuyant la guerre en Ukraine à Nantes ;",
+          "5": "J'acompagne les ressortissants fuyant la guerre en Ukraine pour qu'ils aprennent la langue français et dans leurs recherche d'emploi."
         }
       },
       "form": {
