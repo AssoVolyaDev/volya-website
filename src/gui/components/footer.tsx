@@ -11,6 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styled from 'styled-components';
 
 import * as Constants from '../../constants';
+import { Button } from 'react-bootstrap';
 // import { StyledLink } from '../components/common';
 // import Marginer from './marginer';
 
@@ -126,6 +127,18 @@ const Footer = (): ReactElement => {
 
   return (
     <FooterContainer>
+      <div style={{ display: 'flex', flex: 1, justifyContent: 'center' }}>
+        <Button
+          size="lg"
+          variant="secondary"
+          style={{ color: 'black' }}
+          onClick={() => {
+            window.location.href =
+              'https://www.helloasso.com/associations/association-franco-ukrainienne-volya/formulaires/1';
+          }}>
+          {t('footer.donate')}
+        </Button>
+      </div>
       <TopContainer>
         <TopContentContainer>
           <ContentContainer>
